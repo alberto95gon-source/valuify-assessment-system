@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valuify | High-End Financial Brands & Payment Mastery</title>
+    <title>Valuify | Final Financial Mastery & HTML Dossiers</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,6 @@
         label { font-size: 0.65rem; text-transform: uppercase; color: var(--text-gray); letter-spacing: 1.5px; margin-bottom: 0.3rem; display: block; }
         input, select { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white; outline: none; width: 100%; transition: 0.3s; }
         .btn-prime { width: 100%; background: var(--accent); color: black; border: none; padding: 1.25rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.4s; margin-top: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .btn-prime:disabled { opacity: 0.6; cursor: not-allowed; }
 
         .market-section { padding: 8rem 5%; background: var(--bg-dark); }
         .property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
@@ -59,7 +58,6 @@
         .easter-badge { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--gold); color: black; padding: 0.6rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 0.7rem; z-index: 5; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
-        /* ENTITY UI */
         .entity-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1.5rem; }
         .entity-card { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); padding: 0.8rem; border-radius: 12px; cursor: pointer; transition: 0.3s; }
         .entity-card.active { border-color: var(--accent); background: var(--accent-soft); }
@@ -134,21 +132,16 @@
                 <div id="v-details" style="opacity:0.6; font-size:0.9rem;">Madrid | 100 m2</div>
             </div>
             <div class="glass-box">
-                <h3 style="margin-bottom:1.5rem; font-family:'Playfair Display'; font-size:1.6rem;">Entidad Financiera Élite</h3>
+                <h3 style="margin-bottom:1.5rem; font-family:'Playfair Display'; font-size:1.6rem;">Entidad Bancaria Autorizada</h3>
                 <div class="entity-selector" id="mortgage-v">
                     <div class="entity-card active" data-rate="0.0245" data-name="Aureus Private Banking" onclick="selectEnt(this, 'm', true)"><strong>Aureus Banking</strong><span>Fija 2.45% Premium</span></div>
                     <div class="entity-card" data-rate="0.0285" data-name="Vanguard Credit" onclick="selectEnt(this, 'm', true)"><strong>Vanguard Credit</strong><span>Variable Euribor+0.60%</span></div>
-                </div>
-                <h3 style="margin-bottom:1rem; font-family:'Playfair Display'; font-size:1.3rem;">Seguro de Hogar Fortress</h3>
-                <div class="entity-selector" id="insurance-v">
-                    <div class="entity-card active" data-cost="0.0006" data-name="Fortress Guard (Hogar)" onclick="selectEnt(this, 'i', true)"><strong>Fortress Guard</strong><span>Protección Integral</span></div>
-                    <div class="entity-card" data-cost="0.0009" data-name="Legacy Protector (Patrimonio)" onclick="selectEnt(this, 'i', true)"><strong>Legacy Protector</strong><span>Vida + Hogar</span></div>
                 </div>
                 <table class="payment-table">
                     <thead><tr><th>FRECUENCIA DE PAGO</th><th>CUOTA (80% FINANCIACIÓN)</th></tr></thead>
                     <tbody id="v-pay-body"></tbody>
                 </table>
-                <button class="btn-prime" style="margin-top:2rem;" id="v-dossier-btn" onclick="downloadDossier('V')">EXPLORAR DOSSIER FINANCIERO →</button>
+                <button class="btn-prime" style="margin-top:2rem;" id="v-dossier-btn" onclick="downloadDossier('V')">EXPLORAR DOSSIER FINANCIERO HTML →</button>
             </div>
         </div>
     </section>
@@ -156,7 +149,7 @@
     <section class="market-section" id="market">
         <div style="text-align:center; margin-bottom:5rem;">
             <h2 style="font-family:'Playfair Display'; font-size:3.5rem;">The Luxora Collection</h2>
-            <p style="color:var(--text-gray);">Hipotecas reales con marcas disruptivas y pagos fraccionados.</p>
+            <p style="color:var(--text-gray);">Selecciona un activo para generar tu Dossier Interactivo en formato HTML.</p>
         </div>
         <div class="property-grid" id="market-grid"></div>
     </section>
@@ -182,18 +175,11 @@
                         <div class="entity-card" data-rate="0.0235" data-name="Titan Real (Fixed)" onclick="selectEnt(this, 'm', false)"><strong>Titan Real</strong><span>Fija 2.35% Gold</span></div>
                     </div>
 
-                    <h4 style="font-size:0.65rem; text-transform:uppercase; color:var(--text-gray); margin-bottom:0.8rem; letter-spacing:1px;">Protección Hogar Integrada</h4>
-                    <div class="entity-selector" id="insurance-m">
-                        <div class="entity-card active" data-cost="0.0006" data-name="Equilibrium Insure" onclick="selectEnt(this, 'i', false)"><strong>Equilibrium</strong><span>Pagos Protegidos</span></div>
-                        <div class="entity-card" data-cost="0.0002" data-name="Fortress Basic" onclick="selectEnt(this, 'i', false)"><strong>Fortress Basic</strong><span>Daños Estructurales</span></div>
-                    </div>
-
-                    <p style="font-size:0.7rem; color:var(--text-gray); margin-bottom:0.5rem;">DIVISIÓN DE CUOTAS SEGÚN FRECUENCIA DE PAGO:</p>
                     <table class="payment-table">
                         <thead><tr><th>Frecuencia</th><th>Cuota Proyectada</th></tr></thead>
                         <tbody id="m-pay-body"></tbody>
                     </table>
-                    <button class="btn-prime" style="margin-top:2rem;" id="m-dossier-btn" onclick="downloadDossier('M')">DESCARGAR DOSSIER PROPIEDAD →</button>
+                    <button class="btn-prime" style="margin-top:2rem;" id="m-dossier-btn" onclick="downloadDossier('M')">GENERAR DOSSIER LUXORA HTML →</button>
                 </div>
             </div>
         </div>
@@ -203,7 +189,7 @@
         lucide.createIcons();
 
         let curVal = 0, curVRate = 0.0245, curVIns = 0.0006, curVBank = "Aureus Private Banking", curVInsN = "Fortress Guard";
-        let curMVal = 0, curMRate = 0.0215, curMIns = 0.0006, curMTitle = "", curMAddr = "", curMBank = "Stellar Mutual", curMInsN = "Equilibrium Insure", curMIsEaster=false;
+        let curMVal = 0, curMRate = 0.0215, curMIns = 0.0006, curMTitle = "", curMAddr = "", curMBank = "Stellar Mutual", curMInsN = "Equilibrium Insure", curMImg = "", curMM2=0, curMAge=0, curMIsEaster=false;
 
         const PROPS = [
             { title: 'Zenith Lodge Euskadi', loc: 'San Sebastián', price: 1890000, img: 'listing_4.png', addr: 'Monte Igueldo, Donostia-San Sebastián', m2: 400, rm: 5, bt: 4, age: 0, easter: true },
@@ -250,7 +236,7 @@
         }
 
         function openModal(p) {
-            curMVal = p.price; curMTitle = p.title; curMAddr = p.addr; curMIsEaster = p.easter;
+            curMVal = p.price; curMTitle = p.title; curMAddr = p.addr; curMIsEaster = p.easter; curMImg = p.img;
             document.getElementById('m-img').src = p.img;
             document.getElementById('m-title').innerText = p.title;
             document.getElementById('m-addr').innerText = p.addr;
@@ -269,40 +255,98 @@
             const full = ((curMVal * 0.8 * (curMRate/12)) / (1 - Math.pow(1 + (curMRate/12), -360))) + (curMVal * curMIns / 12);
             document.getElementById('m-pay-body').innerHTML = `
                 <tr><td class="pay-freq">Mensual</td><td>${fmt(full)}</td></tr>
-                <tr><td class="pay-freq">Trimestral (Installment)</td><td>${fmt(full * 3)}</td></tr>
-                <tr><td class="pay-freq">Semestral (Plan)</td><td>${fmt(full * 6)}</td></tr>
-                <tr><td class="pay-freq">Anual (Total Anual)</td><td>${fmt(full * 12)}</td></tr>
+                <tr><td class="pay-freq">Trimestral</td><td>${fmt(full * 3)}</td></tr>
+                <tr><td class="pay-freq">Semestral</td><td>${fmt(full * 6)}</td></tr>
+                <tr><td class="pay-freq">Anual</td><td>${fmt(full * 12)}</td></tr>
             `;
         }
 
         function closeModal() { document.getElementById('p-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
 
-        function downloadDossier(mode) {
+        async function downloadDossier(mode) {
             const btn = document.getElementById(mode === 'V' ? 'v-dossier-btn' : 'm-dossier-btn');
-            btn.innerText = "SINCRONIZANDO CON BANCO..."; btn.disabled = true;
+            btn.innerText = "COMPILANDO DOSSIER HTML..."; btn.disabled = true;
+
+            const full = mode === 'V' 
+                ? ((curVal * 0.8 * (curVRate/12)) / (1 - Math.pow(1 + (curVRate/12), -360))) + (curVal * curVIns / 12)
+                : ((curMVal * 0.8 * (curMRate/12)) / (1 - Math.pow(1 + (curMRate/12), -360))) + (curMVal * curMIns / 12);
+
+            const title = mode === 'V' ? "Reporte de Tasación Patrimonial" : curMTitle;
+            const price = mode === 'V' ? fmt(curVal) : fmt(curMVal);
+            const addr = mode === 'V' ? document.getElementById('v-details').innerText : curMAddr;
+            const bank = mode === 'V' ? curVBank : curMBank;
+            const ins = mode === 'V' ? curVInsN : curMInsN;
+            const imgSrc = mode === 'V' ? "hero_ref.png" : curMImg;
+
+            const htmlContent = `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dossier Luxora | ${title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #0a0a0a; color: white; font-family: 'Outfit', sans-serif; padding: 4rem; text-align: center; }
+        .card { background: #111; border: 1px solid #333; border-radius: 40px; max-width: 800px; margin: 0 auto; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.5); }
+        .hero-img { width: 100%; height: 400px; object-fit: cover; }
+        .content { padding: 3rem; text-align: left; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 0.5rem; color: #10b981; }
+        .addr { color: #aaa; margin-bottom: 2rem; font-size: 1.1rem; }
+        .price-tag { font-size: 2.5rem; font-weight: 600; margin-bottom: 2rem; }
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 20px; }
+        .stat-item strong { display: block; color: #10b981; font-size: 1.2rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+        th { text-align: left; color: #777; font-size: 0.8rem; text-transform: uppercase; padding: 1rem; border-bottom: 1px solid #333; }
+        td { padding: 1.2rem; border-bottom: 1px solid #222; font-size: 1.1rem; }
+        .freq { font-weight: 600; color: #10b981; }
+        .footer { margin-top: 3rem; color: #555; font-size: 0.8rem; }
+        ${mode === 'M' && curMIsEaster ? '.easter-alert { background: #fbbf24; color: black; padding: 1rem; font-weight: bold; border-radius: 10px; margin-bottom: 2rem; text-align: center; }' : ''}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="https://alberto95gon-source.github.io/valuify-assessment-system/${imgSrc}" class="hero-img">
+        <div class="content">
+            ${mode === 'M' && curMIsEaster ? '<div class="easter-alert">OFERTA ESPECIAL: SEMANA SANTA -10% APLICADA</div>' : ''}
+            <h1>${title}</h1>
+            <p class="addr">${addr}</p>
+            <div class="price-tag">${price}</div>
+            
+            <div class="stats">
+                <div class="stat-item"><strong>Entidad Financiera</strong>${bank}</div>
+                <div class="stat-item"><strong>Seguro Patrimonial</strong>${ins}</div>
+            </div>
+
+            <table>
+                <thead><tr><th>FRECUENCIA</th><th>PAGO ESTIMADO</th></tr></thead>
+                <tbody>
+                    <tr><td class="freq">Mensual</td><td>${fmt(full)}</td></tr>
+                    <tr><td class="freq">Trimestral</td><td>${fmt(full * 3)}</td></tr>
+                    <tr><td class="freq">Semestral</td><td>${fmt(full * 6)}</td></tr>
+                    <tr><td class="freq">Anual (Total)</td><td>${fmt(full * 12)}</td></tr>
+                </tbody>
+            </table>
+
+            <div class="footer">
+                Generado por Valuify Master System 4.0 | Protocolo B.L.A.S.T. | Sincronización Bancaria: OK
+            </div>
+        </div>
+    </div>
+</body>
+</html>`;
 
             setTimeout(() => {
-                let content = ""; let filename = "";
-                if(mode === 'V') {
-                    const full = ((curVal * 0.8 * (curVRate/12)) / (1 - Math.pow(1 + (curVRate/12), -360))) + (curVal * curVIns / 12);
-                    content = `VALUIFY | DOSSIER FINANCIERO PREMIUM\n===================================\nTASACIÓN: ${fmt(curVal)}\nBANCO: ${curVBank}\nSEGURO: ${curVInsN}\n-----------------------------------\nPLAN DE PAGOS (SECCIÓN BLOQUEADA):\n- MENSUAL: ${fmt(full)}\n- TRIMESTRAL: ${fmt(full * 3)}\n- SEMESTRAL: ${fmt(full * 6)}\n- ANUAL: ${fmt(full * 12)}\n===================================`;
-                    filename = "Valuify_Report_Finance.txt";
-                } else {
-                    const full = ((curMVal * 0.8 * (curMRate/12)) / (1 - Math.pow(1 + (curMRate/12), -360))) + (curMVal * curMIns / 12);
-                    content = `VALUIFY | DOSSIER OFERTA ESPECIAL\n===================================\nPROPIEDAD: ${curMTitle}\nPRECIO FINAL: ${fmt(curMVal)}\n-----------------------------------\nESTRATEGIA LUXORA:\nHIPOTECA: ${curMBank}\nSEGURO HOGAR: ${curMInsN}\n-----------------------------------\nDIVISION DE PAGOS (CALCULADO):\n- MENSUAL: ${fmt(full)}\n- TRIMESTRAL: ${fmt(full * 3)}\n- ANUAL: ${fmt(full * 12)}\n===================================`;
-                    filename = `Dossier_${curMTitle.replace(/\s+/g, '_')}.txt`;
-                }
-                const blob = new Blob([content], { type: 'text/plain' });
+                const blob = new Blob([htmlContent], { type: 'text/html' });
                 const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a'); a.href = url; a.download = filename; a.click();
-                btn.innerText = mode === 'V' ? "EXPLORAR DOSSIER FINANCIERO →" : "DESCARGAR DOSSIER PROPIEDAD →"; btn.disabled = false;
-                confetti({ particleCount: 150, spread: 60, colors: ['#10b981', '#fbbf24'] });
-            }, 1200);
+                const a = document.createElement('a'); a.href = url; a.download = `Dossier_${title.replace(/\s+/g, '_')}.html`; a.click();
+                btn.innerText = mode === 'V' ? "EXPLORAR DOSSIER FINANCIERO HTML →" : "GENERAR DOSSIER LUXORA HTML →"; btn.disabled = false;
+                confetti({ particleCount: 200, spread: 80 });
+            }, 1000);
         }
 
         document.getElementById('v-form').onsubmit = (e) => {
             e.preventDefault();
-            const btn = document.getElementById('v-btn'); btn.innerText = "CONECTANDO CON MERCADO..."; btn.disabled = true;
+            const btn = document.getElementById('v-btn'); btn.innerText = "CALCULANDO..."; btn.disabled = true;
             setTimeout(() => {
                 const loc = document.getElementById('v-loc').value;
                 const m2 = parseFloat(document.getElementById('v-m2').value);
@@ -314,7 +358,7 @@
                 document.getElementById('v-details').innerText = `${loc.toUpperCase()} | ${m2} m2 | ${rm} Hab.`;
                 document.getElementById('v-view').style.display = 'block'; document.getElementById('hero-contain').style.display = 'none';
                 updateVTable(); btn.innerText = "GENERAR TASACIÓN FINANCIERA"; btn.disabled = false;
-                confetti({ particleCount: 150, spread: 70, origin: { y: 0.7 }, colors: ['#10b981'] });
+                confetti({ particleCount: 150, spread: 70, origin: { y: 0.7 } });
             }, 1200);
         };
     </script>
