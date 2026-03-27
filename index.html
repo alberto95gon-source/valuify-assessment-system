@@ -150,8 +150,8 @@
 
     <section class="market-section" id="market">
         <div style="text-align:center; margin-bottom:5rem;">
-            <h2 style="font-family:'Playfair Display'; font-size:3.5rem;">Marketplace v3.0</h2>
-            <p style="color:var(--text-gray);">Ofertas listas con selección dinámica de hipotecas y seguros.</p>
+            <h2 style="font-family:'Playfair Display'; font-size:3.5rem;">Marketplace v3.2</h2>
+            <p style="color:var(--text-gray);">Ofertas exclusivas con imágenes de alta fidelidad y simulador vivo.</p>
         </div>
         <div class="property-grid" id="market-grid"></div>
     </section>
@@ -166,7 +166,7 @@
                     <h2 id="m-title" style="font-family:'Playfair Display'; font-size:2.5rem; margin-bottom:0.8rem;"></h2>
                     <p id="m-addr" style="color:var(--text-gray); font-size:0.8rem; margin-bottom:1.5rem;"></p>
                     
-                    <!-- ADVANCED SELECTION IN MARKET MODAL -->
+                    <!-- SELECTION IN MODAL -->
                     <h4 style="font-size:0.7rem; text-transform:uppercase; color:var(--text-gray); margin-bottom:0.8rem;">Entidad Hipotecaria</h4>
                     <div class="entity-selector" id="mortgage-m">
                         <div class="entity-card active" data-rate="0.0235" onclick="selectEnt(this, 'm', false)"><strong>Summit Capital</strong><span>Fija 2.35%</span></div>
@@ -196,10 +196,11 @@
         let curVal = 0, curVRate = 0.0235, curVIns = 0.0005;
         let curMVal = 0, curMRate = 0.0235, curMIns = 0.0005;
 
+        // PROPS ARRAY - UPDATED WITH listing_3.png
         const PROPS = [
             { title: 'The Royal Penthouse', loc: 'Madrid', price: 1450000, img: 'listing_1.png', addr: 'Gran Vía 45, Madrid' },
             { title: 'Mediterranean Oasis', loc: 'Marbella', price: 890000, img: 'listing_2.png', addr: 'Calle del Sol 8, Marbella' },
-            { title: 'Skyline Studio Loft', loc: 'Barcelona', price: 420000, img: 'hero_ref.png', addr: 'Passatge de la Pau 12, Barcelona' }
+            { title: 'Summit Tower Residencial', loc: 'Madrid', price: 920000, img: 'listing_3.png', addr: 'Paseo de la Castellana 200, Madrid' }
         ];
 
         const fmt = (v) => v.toLocaleString('de-DE', { minimumFractionDigits: 2 }) + ' €';
