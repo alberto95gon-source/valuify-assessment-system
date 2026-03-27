@@ -1,0 +1,19 @@
+=========================================
+      REPORTE DE TASACIÓN INMOBILIARIA
+=========================================
+Fecha: 2026-03-27 16:30:00
+Ubicación: Madrid (Precisión: Alta)
+-----------------------------------------
+VALOR ESTIMADO: 585,277.06 EUR
+Precio/m2: 5,852.77 EUR
+-----------------------------------------
+DETALLES DE LA PROPIEDAD:
+- Superficie: 100 m2
+- Habitaciones: 3
+- Baños: 2
+- Antigüedad: 10 años
+- Terraza: Sí
+-----------------------------------------
+Generado por: System Pilot (Antigravity)
+Protocolo BLAST v1.0
+=========================================
