@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valuify | Welcoming Financial Mastery</title>
+    <title>Valuify | Secure & Welcoming Financial Mastery</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,186 +14,187 @@
     <style>
         :root {
             --bg-light: #faf9f6;
-            --accent: #059669; /* Warm Emerald */
+            --accent: #059669; /* Emerald */
             --accent-soft: rgba(5, 150, 105, 0.08);
             --text-dark: #111827;
             --text-gray: #6b7280;
-            --glass-bg: rgba(255, 255, 255, 0.6);
-            --glass-border: rgba(0, 0, 0, 0.05);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(0, 0, 0, 0.06);
             --gold: #fbbf24;
-            --card-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+            --card-shadow: 0 40px 80px rgba(0, 0, 0, 0.06);
         }
 
         * { margin:0; padding:0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
 
-        nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; backdrop-filter: blur(15px); background: rgba(255,255,255,0.7); border-bottom: 1px solid var(--glass-border); }
+        nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; backdrop-filter: blur(15px); background: rgba(255,255,255,0.8); border-bottom: 1px solid var(--glass-border); }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 0.5rem; }
         .nav-links { display: flex; gap: 2rem; }
         .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; font-weight: 500; transition: 0.3s; opacity: 0.7; }
         .nav-links a:hover { opacity: 1; color: var(--accent); }
 
-        .hero { position: relative; height: 90vh; display: flex; align-items: center; overflow: hidden; padding-top: 80px; }
-        .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(1.05) saturate(0.9); animation: slowZoom 40s linear infinite alternate; }
-        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.08); } }
-        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(250,249,246,0.9) 20%, transparent 100%); }
+        .hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; padding-top: 100px; padding-bottom: 50px;}
+        .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(1.02) saturate(0.95); animation: slowZoom 45s linear infinite alternate; }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(250,249,246,0.92) 25%, transparent 100%); }
 
-        .container { position: relative; z-index: 10; padding: 0 5%; width: 100%; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
+        .container { position: relative; z-index: 10; padding: 0 5%; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 4.8rem; line-height: 1.05; color: var(--text-dark); margin-bottom: 2rem; }
         .hero-text span { color: var(--accent); font-style: italic; }
-        .hero-text p { font-size: 1.1rem; color: var(--text-gray); max-width: 500px; line-height: 1.6; }
+        .hero-text p { font-size: 1rem; color: var(--text-gray); max-width: 500px; line-height: 1.6; font-weight: 300; }
 
-        .glass-box { background: var(--glass-bg); backdrop-filter: blur(30px); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 40px; box-shadow: var(--card-shadow); }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
-        label { font-size: 0.65rem; text-transform: uppercase; color: var(--accent); font-weight: 600; letter-spacing: 1.5px; margin-bottom: 0.4rem; display: block; }
-        input, select { background: white; border: 1px solid rgba(0,0,0,0.08); padding: 1.1rem; border-radius: 12px; color: var(--text-dark); outline: none; width: 100%; transition: 0.3s; font-size: 0.9rem; }
+        .glass-box { background: var(--glass-bg); backdrop-filter: blur(40px); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 40px; box-shadow: var(--card-shadow); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.2rem 0; }
+        label { font-size: 0.65rem; text-transform: uppercase; color: var(--accent); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 0.4rem; display: block; }
+        input, select { background: white; border: 1px solid rgba(0,0,0,0.08); padding: 1.2rem; border-radius: 12px; color: var(--text-dark); outline: none; width: 100%; transition: 0.3s; font-size: 0.95rem; }
         input:focus { border-color: var(--accent); }
-        .btn-prime { width: 100%; background: var(--accent); color: white; border: none; padding: 1.1rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.4s; margin-top: 1rem; text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2); }
-        .btn-prime:hover { background: #047857; transform: translateY(-2px); }
+        
+        .amenity-checks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 1.5rem; }
+        .check-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; color: var(--text-gray); cursor: pointer; background: rgba(255,255,255,0.4); padding: 0.6rem; border-radius: 10px; border: 1px solid var(--glass-border); transition: 0.3s; }
+        .check-item input { width: auto; }
+        .check-item:hover { background: white; border-color: var(--accent); }
 
-        .market-section { padding: 8rem 5%; background: white; }
-        .property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
-        .property-card { background: var(--bg-light); border: 1px solid var(--glass-border); border-radius: 32px; overflow: hidden; cursor: pointer; transition: 0.4s; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
-        .property-card:hover { transform: translateY(-10px); box-shadow: var(--card-shadow); border-color: var(--accent); }
-        .card-img { width: 100%; height: 350px; object-fit: cover; }
-        .card-body { padding: 2.2rem; }
-        .card-body h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .btn-prime { width: 100%; background: var(--accent); color: white; border: none; padding: 1.2rem; border-radius: 14px; font-weight: 600; cursor: pointer; transition: 0.4s; margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 15px 30px rgba(5, 150, 105, 0.2); }
+        .btn-prime:hover { filter: brightness(1.1); transform: translateY(-3px); }
 
-        .easter-badge { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--gold); color: black; padding: 0.7rem 1.4rem; border-radius: 50px; font-weight: 800; font-size: 0.7rem; z-index: 5; box-shadow: 0 10px 20px rgba(0,0,0,0.1); animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0); } }
+        .market-section { padding: 10rem 5%; background: white; }
+        .property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3.5rem; }
+        .property-card { background: var(--bg-light); border: 1px solid var(--glass-border); border-radius: 36px; overflow: hidden; cursor: pointer; transition: 0.5s; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.02); }
+        .property-card:hover { transform: translateY(-12px) scale(1.01); box-shadow: var(--card-shadow); border-color: var(--accent); }
+        .card-img { width: 100%; height: 380px; object-fit: cover; }
+        .card-body { padding: 2.5rem; }
+        .card-body h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.6rem; }
+        
+        .amenity-tag { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 1rem; margin-right: 0.5rem; font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 0.4rem 0.8rem; border-radius: 30px; font-weight: 600;  }
 
-        /* ENTITY UI */
-        .entity-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
-        .entity-card { background: white; border: 1px solid var(--glass-border); padding: 1rem; border-radius: 16px; cursor: pointer; transition: 0.3s; }
-        .entity-card.active { border-color: var(--accent); background: var(--accent-soft); }
-        .entity-card strong { display: block; font-size: 0.85rem; color: var(--accent); }
-        .entity-card span { font-size: 0.65rem; color: var(--text-gray); }
+        .modal { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(255,255,255,0.96); backdrop-filter: blur(25px); padding: 2% 4%; overflow-y: auto; }
+        .modal-content { background: white; border: 1px solid var(--glass-border); border-radius: 60px; max-width: 1400px; margin: 0 auto; overflow: hidden; box-shadow: 0 100px 250px rgba(0,0,0,0.1); }
+        .modal-inner { display: grid; grid-template-columns: 1.15fr 1fr; min-height: 90vh; }
+        .modal-info { padding: 5rem; }
+        .modal-close { position: absolute; top: 2rem; right: 4rem; background: var(--accent); color: white; border: none; padding: 1.2rem; border-radius: 50%; cursor: pointer; z-index: 210; box-shadow: 0 15px 30px rgba(5, 150, 105, 0.3); }
 
-        .payment-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        .payment-table th { text-align: left; color: var(--text-gray); padding: 0.8rem; border-bottom: 1px solid var(--glass-border); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; }
-        .payment-table td { padding: 1rem; border-bottom: 1px solid var(--glass-border); font-size: 1rem; font-weight: 500; }
-        .pay-freq { font-weight: 600; color: var(--accent); }
+        .payment-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+        .payment-table td { padding: 1.2rem 1rem; border-bottom: 1px solid var(--glass-border); font-size: 1.1rem; font-weight: 500; }
+        .pay-freq { color: var(--accent); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; }
 
-        .modal { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); padding: 3% 5%; overflow-y: auto; }
-        .modal-content { background: white; border: 1px solid var(--glass-border); border-radius: 50px; max-width: 1300px; margin: 0 auto; overflow: hidden; box-shadow: 0 100px 200px rgba(0,0,0,0.1); }
-        .modal-inner { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 85vh; }
-        .modal-info { padding: 4rem; }
-        .modal-close { position: absolute; top: 2rem; right: 4rem; background: var(--accent); color: white; border: none; padding: 1rem; border-radius: 50%; cursor: pointer; z-index: 210; box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3); }
-
-        .valuation-view { display: none; padding: 10rem 5% 5rem; background: var(--bg-light); min-height: 100vh; }
-        .v-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 6rem; align-items: start; }
-
-        @media (max-width: 1024px) { .container, .modal-inner, .v-grid { grid-template-columns: 1fr; } .hero { height: auto; } .hero-overlay { background: rgba(250,249,246,0.9); } }
+        .valuation-view { display: none; padding: 11rem 5% 5rem; background: var(--bg-light); min-height: 100vh; }
+        .v-grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 6rem; align-items: start; }
+        
+        /* SECURITY BADGE */
+        .security-banner { background: #111; color: white; padding: 1rem 2rem; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+        .security-banner i { color: var(--accent); }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo"><i data-lucide="sun"></i> Valuify</div>
+        <div class="logo"><i data-lucide="shield-check"></i> Valuify</div>
         <div class="nav-links">
-            <a href="#home" onclick="location.reload()">RE-TASAR</a>
-            <a href="#market">CATÁLOGO</a>
-            <a href="#">FINANZAS LUXORA</a>
+            <a href="#home" onclick="location.reload()">TASACIÓN</a>
+            <a href="#market">CATÁLOGO SEGURO</a>
+            <a href="#">FINANZAS OMNISHIELD</a>
         </div>
     </nav>
 
     <section class="hero" id="home">
-        <img src="hero_ref.png" class="hero-bg" alt="Luxury Real Estate">
+        <img src="hero_ref.png" class="hero-bg" alt="Luxury Assets">
         <div class="hero-overlay"></div>
         <div class="container" id="hero-contain">
             <div class="hero-text">
-                <h1>Welcome to <span>Luxury</span> Simplicity.</h1>
-                <p>Descubre el valor real de tu patrimonio en un entorno diseñado para la claridad financiera y la hospitalidad de alto nivel.</p>
+                <h1>Secure <span>Assets</span>, Premium Life.</h1>
+                <p>Ingeniería financiera con protocolos de seguridad **OmniShield Assets** y tasaciones deterministas de alta gama.</p>
             </div>
             <div class="glass-box">
                 <form id="v-form">
-                    <label>Tu Ubicación</label>
+                    <label>Zona Residencial</label>
                     <select id="v-loc">
-                        <option value="madrid">Madrid</option>
-                        <option value="barcelona">Barcelona</option>
-                        <option value="san sebastian">San Sebastián (Euskadi)</option>
-                        <option value="valencia">Valencia</option>
+                        <option value="madrid">Madrid Centro / Retiro</option>
+                        <option value="barcelona">Barcelona Diagonal / Sarrià</option>
+                        <option value="san sebastian">San Sebastián (Donostia)</option>
+                        <option value="valencia">Valencia Ciudad Artes</option>
                     </select>
                     <div class="form-grid">
-                        <div class="group"><label>Superficie (m2)</label><input type="number" id="v-m2" value="105"></div>
-                        <div class="group"><label>Años Vivienda</label><input type="number" id="v-age" value="3"></div>
+                        <div class="group"><label>Metros Útiles (m2)</label><input type="number" id="v-m2" value="120"></div>
+                        <div class="group"><label>Antigüedad (Años)</label><input type="number" id="v-age" value="2"></div>
                     </div>
-                    <div class="form-grid">
-                        <div class="group"><label>Habitaciones</label><input type="number" id="v-rm" value="3"></div>
-                        <div class="group"><label>Cuartos Baño</label><input type="number" id="v-bt" value="2"></div>
+                    <label>Comodidades Premium (Elite Amenities)</label>
+                    <div class="amenity-checks">
+                        <div class="check-item"><input type="checkbox" id="c-park"> 🅿️ Parking</div>
+                        <div class="check-item"><input type="checkbox" id="c-pool"> 🏊 Piscina</div>
+                        <div class="check-item"><input type="checkbox" id="c-wifi"> 🌐 Wi-Fi 6</div>
+                        <div class="check-item"><input type="checkbox" id="c-cam"> 📹 Cámaras 4K</div>
+                        <div class="check-item"><input type="checkbox" id="c-guard"> 👮 Vigilancia 24h</div>
                     </div>
-                    <button class="btn-prime" id="v-btn">INICIAR CONSULTA PREMIUM</button>
-                    <p style="text-align:center; font-size:0.7rem; color:var(--text-gray); margin-top:1rem;">Protocolo B.L.A.S.T. / Tasación Marzo 2026</p>
+                    <button class="btn-prime" id="v-btn">GENERAR REPORTE COMPLETO</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Valuation Result Screen (Light) -->
+    <!-- Valuation Result Screen (Luminous & Protected) -->
     <section class="valuation-view" id="v-view">
         <div class="v-grid">
-            <div class="glass-box" style="text-align:center; display:flex; flex-direction:column; justify-content:center; padding: 4rem;">
-                <p style="text-transform:uppercase; font-size:0.75rem; letter-spacing:3px; color:var(--accent); font-weight:700; margin-bottom:1.5rem;">Valoración Patrimonial</p>
-                <h2 id="v-price" style="font-size:4.5rem; color:var(--text-dark); margin-bottom:2rem; font-family:'Playfair Display';">-- €</h2>
-                <div id="v-details" style="color:var(--text-gray); font-size:1rem; letter-spacing:1px;">ESTUDIO TÉCNICO COMPLETO</div>
-                <div style="height:1px; background:var(--glass-border); width:60%; margin:2rem auto;"></div>
-                <p style="font-size:0.8rem; color:var(--text-gray);">Basado en benchmarks de alta fidelidad 2026.</p>
+            <div class="glass-box" style="text-align:center; padding: 5rem 4rem;">
+                <p style="text-transform:uppercase; font-size:0.8rem; letter-spacing:4px; color:var(--accent); font-weight:800; margin-bottom:1.5rem;">Valoración Protegida 2026</p>
+                <h2 id="v-price" style="font-size:4.8rem; color:var(--text-dark); margin-bottom:2.5rem; font-family:'Playfair Display';">-- €</h2>
+                <div class="security-banner">
+                    <div style="text-align:left;"><strong style="font-size:0.7rem; color:var(--accent);">SISTEMA DE SEGURIDAD</strong><p style="font-size:0.8rem;">OmniShield Asset Protection</p></div>
+                    <i data-lucide="shield"></i>
+                </div>
+                <div id="v-details" style="color:var(--text-gray); font-size:1.1rem; letter-spacing:1px; margin-top:2rem;">DETALLE TÉCNICO COMPLETO</div>
             </div>
             <div class="glass-box">
-                <h3 style="margin-bottom:2rem; font-family:'Playfair Display'; font-size:2rem;">Gestión Bancaria Elegida</h3>
+                <h3 style="margin-bottom:2rem; font-family:'Playfair Display'; font-size:2.2rem;">Financiación & Coberturas</h3>
                 <div class="entity-selector" id="mortgage-v">
                     <div class="entity-card active" data-rate="0.0245" data-name="Aureus Private Banking" onclick="selectEnt(this, 'm', true)"><strong>Aureus Banking</strong><span>Fija 2.45% Premium</span></div>
                     <div class="entity-card" data-rate="0.0285" data-name="Vanguard Credit" onclick="selectEnt(this, 'm', true)"><strong>Vanguard Credit</strong><span>Digital Variable</span></div>
                 </div>
-                <h3 style="margin-bottom:1.5rem; font-family:'Playfair Display'; font-size:1.4rem;">Protección Patrimonial</h3>
                 <div class="entity-selector" id="insurance-v">
-                    <div class="entity-card active" data-cost="0.0006" data-name="Fortress Guard (Hogar)" onclick="selectEnt(this, 'i', true)"><strong>Fortress Guard</strong><span>Escudo Integral</span></div>
-                    <div class="entity-card" data-cost="0.0009" data-name="Legacy Protector (Premium)" onclick="selectEnt(this, 'i', true)"><strong>Legacy Protector</strong><span>Vida + Hogar</span></div>
+                    <div class="entity-card active" data-cost="0.0006" data-name="Fortress Guard (OmniShield Integrado)" onclick="selectEnt(this, 'i', true)"><strong>Fortress Guard</strong><span>Escudo OmniShield</span></div>
+                    <div class="entity-card" data-cost="0.0002" data-name="Essential Asset" onclick="selectEnt(this, 'i', true)"><strong>Essential Asset</strong><span>Cobertura Básica</span></div>
                 </div>
                 <table class="payment-table">
-                    <thead><tr><th>Frecuencia de Cuotas</th><th>Importe Proyectado</th></tr></thead>
+                    <thead><tr><th style="text-align:left; font-size:0.65rem; color:var(--text-gray); letter-spacing:2px;">MODALIDAD DE PAGO</th><th style="text-align:left; font-size:0.65rem; color:var(--text-gray); letter-spacing:2px;">CUOTA FINAL</th></tr></thead>
                     <tbody id="v-pay-body"></tbody>
                 </table>
-                <button class="btn-prime" style="margin-top:2.5rem;" id="v-dossier-btn" onclick="downloadDossier('V')">EXPORTAR DOSSIER COMPLETO HTML</button>
+                <button class="btn-prime" style="margin-top:2.5rem;" id="v-dossier-btn" onclick="downloadDossier('V')">EXPORTAR DOSSIER ESTRUCTURAL (HTML)</button>
             </div>
         </div>
     </section>
 
     <section class="market-section" id="market">
-        <div style="text-align:center; margin-bottom:6rem;">
-            <p style="color:var(--accent); font-weight:700; letter-spacing:3px; text-transform:uppercase; font-size:0.75rem; margin-bottom:1rem;">Oportunidades Exclusivas</p>
-            <h2 style="font-family:'Playfair Display'; font-size:4rem;">The Luxora Collection</h2>
-            <p style="color:var(--text-gray); max-width:600px; margin:1.5rem auto auto;">Explora nuestra selección de activos en España con ingeniería financiera pre-aprobada.</p>
+        <div style="text-align:center; margin-bottom:7rem;">
+            <p style="color:var(--accent); font-weight:800; letter-spacing:4px; text-transform:uppercase; font-size:0.8rem; margin-bottom:1rem;">Viviendas Inteligentes & Seguras</p>
+            <h2 style="font-family:'Playfair Display'; font-size:4.2rem;">The Secured Collection 2026</h2>
+            <p style="color:var(--text-gray); max-width:650px; margin:2rem auto auto; font-size:1.1rem;">Seleccionadas por sus protocolos de seguridad **OmniShield** y acabados de lujo.</p>
         </div>
         <div class="property-grid" id="market-grid"></div>
     </section>
 
-    <!-- Interactive Market Modal (Luminous) -->
+    <!-- Modal with Security Details -->
     <div class="modal" id="p-modal">
         <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
         <div class="modal-content">
             <div class="modal-inner">
                 <img src="" id="m-img" style="width:100%; height:100%; object-fit:cover;">
                 <div class="modal-info">
-                    <div id="m-easter" class="easter-badge" style="display:none">DESCUENTO SEMANA SANTA -10%</div>
-                    <h2 id="m-title" style="font-family:'Playfair Display'; font-size:3rem; margin-bottom:0.5rem; color:var(--text-dark);"></h2>
-                    <p id="m-addr" style="color:var(--accent); font-weight:600; font-size:0.9rem; margin-bottom:2rem; letter-spacing:1px;"></p>
+                    <div id="m-easter" class="easter-badge" style="display:none">SEM. SANTA DISCOUNT -10%</div>
+                    <h2 id="m-title" style="font-family:'Playfair Display'; font-size:3.5rem; color:var(--text-dark);"></h2>
+                    <p id="m-addr" style="color:var(--accent); font-weight:700; font-size:1rem; margin-bottom:2.5rem; letter-spacing:1px;"></p>
                     
-                    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:0.6rem; margin-bottom:2.5rem;">
-                        <input value="--" disabled id="m-m2" style="text-align:center; font-weight:600; background:#f9f9f9; border:none;"><input value="--" disabled id="m-rm" style="text-align:center; font-weight:600; background:#f9f9f9; border:none;"><input value="--" disabled id="m-bt" style="text-align:center; font-weight:600; background:#f9f9f9; border:none;"><input value="--" disabled id="m-age" style="text-align:center; font-weight:600; background:#f9f9f9; border:none;">
-                    </div>
+                    <div id="m-amenities" style="margin-bottom:2.5rem;"></div>
 
-                    <h4 style="font-size:0.7rem; text-transform:uppercase; color:var(--text-gray); margin-bottom:1rem; letter-spacing:2px; font-weight:700;">Plan de Financiación</h4>
+                    <h4 style="font-size:0.75rem; text-transform:uppercase; color:var(--text-gray); margin-bottom:1.5rem; letter-spacing:3px; font-weight:800;">Plan de Amortización & Seguros</h4>
                     <div class="entity-selector" id="mortgage-m">
                         <div class="entity-card active" data-rate="0.0215" data-name="Stellar Mutual (Mixed)" onclick="selectEnt(this, 'm', false)"><strong>Stellar Mutual</strong><span>Híbrida 2.15%</span></div>
                         <div class="entity-card" data-rate="0.0235" data-name="Titan Real (Fixed)" onclick="selectEnt(this, 'm', false)"><strong>Titan Real</strong><span>Fija 2.35% Gold</span></div>
                     </div>
 
                     <table class="payment-table">
-                        <thead><tr><th>Frecuencia de Pago</th><th>Cuota Final Estimada</th></tr></thead>
+                        <thead><tr><th style="text-align:left; font-size:0.6rem; color:var(--text-gray); letter-spacing:2px;">FRECUENCIA</th><th style="text-align:left; font-size:0.6rem; color:var(--text-gray); letter-spacing:2px;">CUOTA</th></tr></thead>
                         <tbody id="m-pay-body"></tbody>
                     </table>
-                    <button class="btn-prime" style="margin-top:2.5rem;" id="m-dossier-btn" onclick="downloadDossier('M')">DESCARGAR MI DOSSIER LUXORA (.HTML)</button>
+                    <button class="btn-prime" style="margin-top:3rem;" id="m-dossier-btn" onclick="downloadDossier('M')">OBTENER DOSSIER DE SEGURIDAD LUXORA</button>
                 </div>
             </div>
         </div>
@@ -204,14 +205,14 @@
     <script>
         lucide.createIcons();
 
-        let curVal = 0, curVRate = 0.0245, curVIns = 0.0006, curVBank = "Aureus Private Banking", curVInsN = "Fortress Guard", curVM2=0, curVRm=0, curVBt=0, curVAge=0;
-        let curMVal = 0, curMRate = 0.0215, curMIns = 0.0006, curMTitle = "", curMAddr = "", curMBank = "Stellar Mutual", curMInsN = "Equilibrium Insure", curMImg = "", curMM2=0, curMAge=0, curMIsEaster=false;
+        let curVal = 0, curVRate = 0.0245, curVIns = 0.0006, curVBank = "Aureus Private Banking", curVInsN = "Fortress Guard (OmniShield)";
+        let curMVal = 0, curMRate = 0.0215, curMIns = 0.0006, curMTitle = "", curMAddr = "", curMBank = "Stellar Mutual", curMInsN = "Equilibrium Insure", curMImg = "", curMIsEaster=false, curMAm=[];
 
         const PROPS = [
-            { title: 'Zenith Lodge Euskadi', loc: 'San Sebastián', price: 1890000, img: 'listing_4.png', addr: 'Monte Igueldo, Donostia-San Sebastián', m2: 400, rm: 5, bt: 4, age: 0, easter: true },
-            { title: 'The Royal Penthouse', loc: 'Madrid', price: 1450000, img: 'listing_1.png', addr: 'Gran Vía 45, Madrid', m2: 180, rm: 4, bt: 3, age: 2, easter: false },
-            { title: 'Mediterranean Oasis', loc: 'Marbella', price: 890000, img: 'listing_2.png', addr: 'Calle del Sol 8, Marbella', m2: 250, rm: 5, bt: 4, age: 5, easter: false },
-            { title: 'Summit Tower Residencial', loc: 'Madrid', price: 920000, img: 'listing_3.png', addr: 'Paseo de la Castellana 200, Madrid', m2: 155, rm: 3, bt: 2, age: 1, easter: false }
+            { title: 'Zenith Lodge Euskadi', loc: 'San Sebastián', price: 1890000, img: 'listing_4.png', addr: 'Monte Igueldo, Donostia-San Sebastián', m2: 400, rm: 5, bt: 4, age: 0, easter: true, am: ['Parking VIP', 'Piscina Infinity', 'Wifi 6', 'Cámaras 4K', 'Seguridad OmniShield'] },
+            { title: 'The Royal Penthouse', loc: 'Madrid', price: 1450000, img: 'listing_1.png', addr: 'Gran Vía 45, Madrid', m2: 180, rm: 4, bt: 3, age: 2, easter: false, am: ['Parking', 'Seguridad 24h', 'Wifi Giga', 'Smart Home'] },
+            { title: 'Mediterranean Oasis', loc: 'Marbella', price: 890000, img: 'listing_2.png', addr: 'Calle del Sol 8, Marbella', m2: 250, rm: 5, bt: 4, age: 5, easter: false, am: ['Piscina', 'Jardines', 'Wifi Exterior', 'Cámaras'] },
+            { title: 'Summit Tower Residencial', loc: 'Madrid', price: 920000, img: 'listing_3.png', addr: 'Paseo de la Castellana 200, Madrid', m2: 155, rm: 3, bt: 2, age: 1, easter: false, am: ['Portería 24h', 'Parking Robotizado', 'Cámaras Térmicas'] }
         ];
 
         const fmt = (v) => v.toLocaleString('de-DE', { minimumFractionDigits: 2 }) + ' €';
@@ -219,8 +220,8 @@
         const grid = document.getElementById('market-grid');
         PROPS.forEach(p => {
             const card = document.createElement('div'); card.className = 'property-card'; card.onclick = () => openModal(p);
-            const badge = p.easter ? `<div class="easter-badge">OFERTA ESPECIAL</div>` : "";
-            card.innerHTML = `${badge}<img src="${p.img}" class="card-img"><div class="card-body"><h3>${p.title}</h3><p style="font-size:1.8rem; color:var(--accent); font-weight:700;">${fmt(p.price)}</p><p style="color:var(--text-gray); font-size:0.8rem; margin-top:0.6rem; letter-spacing:1px;">${p.addr.toUpperCase()}</p></div>`;
+            const badge = p.easter ? `<div class="easter-badge">OFERTA SEMANA SANTA</div>` : "";
+            card.innerHTML = `${badge}<img src="${p.img}" class="card-img"><div class="card-body"><h3>${p.title}</h3><p style="font-size:1.8rem; color:var(--accent); font-weight:800;">${fmt(p.price)}</p><p style="color:var(--text-gray); font-size:0.8rem; margin-top:0.6rem; letter-spacing:1px;">${p.addr.toUpperCase()}</p></div>`;
             grid.appendChild(card);
         });
 
@@ -244,23 +245,24 @@
             if(!curVal) return;
             const full = ((curVal * 0.8 * (curVRate/12)) / (1 - Math.pow(1 + (curVRate/12), -360))) + (curVal * curVIns / 12);
             document.getElementById('v-pay-body').innerHTML = `
-                <tr><td class="pay-freq">Frecuencia Mensual</td><td>${fmt(full)}</td></tr>
-                <tr><td class="pay-freq">Frecuencia Trimestral</td><td>${fmt(full * 3)}</td></tr>
-                <tr><td class="pay-freq">Frecuencia Semestral</td><td>${fmt(full * 6)}</td></tr>
-                <tr><td class="pay-freq">Inversión Anual Total</td><td>${fmt(full * 12)}</td></tr>
+                <tr><td class="pay-freq">Mensual Flexible</td><td>${fmt(full)}</td></tr>
+                <tr><td class="pay-freq">Trimestral Plan</td><td>${fmt(full * 3)}</td></tr>
+                <tr><td class="pay-freq">Semestral Élite</td><td>${fmt(full * 6)}</td></tr>
+                <tr><td class="pay-freq">Anual Patrimonial</td><td>${fmt(full * 12)}</td></tr>
             `;
         }
 
         function openModal(p) {
-            curMVal = p.price; curMTitle = p.title; curMAddr = p.addr; curMIsEaster = p.easter; curMImg = p.img;
+            curMVal = p.price; curMTitle = p.title; curMAddr = p.addr; curMIsEaster = p.easter; curMImg = p.img; curMAm = p.am;
             document.getElementById('m-img').src = p.img;
             document.getElementById('m-title').innerText = p.title;
             document.getElementById('m-addr').innerText = p.addr.toUpperCase();
-            document.getElementById('m-m2').value = p.m2 + " m2";
-            document.getElementById('m-rm').value = p.rm + " Hab.";
-            document.getElementById('m-bt').value = p.bt + " Baños";
-            document.getElementById('m-age').value = p.age + " Años";
             document.getElementById('m-easter').style.display = p.easter ? 'block' : 'none';
+            
+            let amHtml = "";
+            p.am.forEach(a => { amHtml += `<span class="amenity-tag">${a}</span>`; });
+            document.getElementById('m-amenities').innerHTML = amHtml;
+
             updateMTable();
             document.getElementById('p-modal').style.display = 'block';
             document.body.style.overflow = 'hidden';
@@ -290,17 +292,18 @@
 
         async function downloadDossier(mode) {
             const btn = document.getElementById(mode === 'V' ? 'v-dossier-btn' : 'm-dossier-btn');
-            btn.innerText = "PREPARANDO INFORME LUXORA..."; btn.disabled = true;
+            btn.innerText = "ENCRIPTANDO REPORTE OMNISHIELD..."; btn.disabled = true;
 
             const full = mode === 'V' 
                 ? ((curVal * 0.8 * (curVRate/12)) / (1 - Math.pow(1 + (curVRate/12), -360))) + (curVal * curVIns / 12)
                 : ((curMVal * 0.8 * (curMRate/12)) / (1 - Math.pow(1 + (curMRate/12), -360))) + (curMVal * curMIns / 12);
 
-            const title = mode === 'V' ? "Reporte de Análisis Patrimonial" : curMTitle;
+            const title = mode === 'V' ? "Análisis Proyectivo de Activo" : curMTitle;
             const price = mode === 'V' ? fmt(curVal) : fmt(curMVal);
             const addr = mode === 'V' ? document.getElementById('v-details').innerText : curMAddr;
             const bank = mode === 'V' ? curVBank : curMBank;
             const ins = mode === 'V' ? curVInsN : curMInsN;
+            const amenities = mode === 'V' ? Array.from(document.querySelectorAll('.amenity-checks input:checked')).map(c => c.parentElement.innerText.trim()) : curMAm;
             
             let base64Img = "";
             try {
@@ -315,52 +318,58 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Valuify | Luxora Dossier | ${title}</title>
+    <title>Valuify | Luxora Secure Dossier | ${title}</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
-        body { background: #faf9f6; color: #111827; font-family: 'Outfit', sans-serif; padding: 4rem; }
-        .card { background: white; border: 1px solid #eee; border-radius: 60px; max-width: 900px; margin: 0 auto; overflow: hidden; box-shadow: 0 80px 150px rgba(0,0,0,0.08); }
+        body { background: #faf9f6; color: #111827; font-family: 'Outfit', sans-serif; padding: 4rem; margin: 0; }
+        .card { background: white; border: 1px solid #ddd; border-radius: 60px; max-width: 900px; margin: 0 auto; overflow: hidden; box-shadow: 0 80px 150px rgba(0,0,0,0.1); }
         .banner { width: 100%; height: 500px; object-fit: cover; }
-        .inner { padding: 5rem; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 0.5rem; color: #059669; font-style: italic; }
-        .loc { color: #6b7280; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 3rem; }
-        .price { font-size: 3.5rem; font-weight: 600; margin-bottom: 4rem; color: #111; border-bottom: 2px solid #059669; display: inline-block; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
-        .box { padding: 2.5rem; background: #faf9f6; border-radius: 30px; }
-        .box strong { display: block; color: #059669; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.8rem; }
+        .inner { padding: 4rem; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; color: #059669; font-style: italic; }
+        .loc { color: #6b7280; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; margin-bottom: 2.5rem; }
+        .price { font-size: 3.5rem; font-weight: 700; color: #111; margin-bottom: 3rem; }
+        .sec-badge { background: #111; color: white; padding: 1.2rem 2.5rem; border-radius: 20px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem; }
+        .tag { display: inline-block; background: #f0fdf4; color: #059669; padding: 0.5rem 1rem; border-radius: 50px; margin: 0.3rem; font-size: 0.7rem; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
+        .box { padding: 2rem; background: #faf9f6; border-radius: 25px; border: 1px solid #eee; }
+        .box strong { display: block; color: #059669; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.8rem; }
         table { width: 100%; border-collapse: collapse; }
-        th { text-align: left; color: #999; padding: 2rem 1rem; border-bottom: 3px solid #eee; font-size: 0.7rem; letter-spacing: 2px; }
-        td { padding: 2rem 1rem; border-bottom: 1px solid #eee; font-size: 1.5rem; }
+        th { text-align: left; color: #999; padding: 1.5rem 1rem; border-bottom: 3px solid #eee; font-size: 0.65rem; letter-spacing: 3px; }
+        td { padding: 1.5rem 1rem; border-bottom: 1px solid #eee; font-size: 1.4rem; }
         .accent-v { color: #059669; font-weight: 700; }
-        .footer { margin-top: 5rem; text-align: center; color: #999; font-size: 0.75rem; letter-spacing: 3px; }
-        ${mode === 'M' && curMIsEaster ? '.offer { background: #fbbf24; color: black; padding: 1.5rem; font-weight: 900; text-align: center; font-size: 1.5rem; border-radius: 20px; margin-bottom: 3rem; }' : ''}
+        .footer { margin-top: 5rem; text-align: center; color: #999; font-size: 0.7rem; letter-spacing: 4px; }
     </style>
 </head>
 <body>
     <div class="card">
         <img src="${base64Img}" class="banner">
         <div class="inner">
-            ${mode === 'M' && curMIsEaster ? '<div class="offer">PROMOCIÓN SEMANA SANTA -10% APLICADA</div>' : ''}
+            <div class="sec-badge">PROTOCOLO DE SEGURIDAD OMNISHIELD ASSETS 2026 <span>OK</span></div>
             <h1>${title}</h1>
             <p class="loc">${addr}</p>
             <div class="price">${price}</div>
             
+            <div style="margin-bottom: 3rem;">
+                <p style="font-size: 0.7rem; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">Comodidades & Seguridad:</p>
+                ${amenities.map(a => `<span class="tag">${a}</span>`).join('')}
+            </div>
+
             <div class="grid">
                 <div class="box"><strong>Gestión Bancaria</strong>${bank}</div>
                 <div class="box"><strong>Plan de Protección</strong>${ins}</div>
             </div>
 
             <table>
-                <thead><tr><th>MODALIDAD FINANCIERA</th><th>CUOTA CÁLCULO 2026</th></tr></thead>
+                <thead><tr><th>PROGRAMA FINANCIERO</th><th>CUOTA CALIBRADA</th></tr></thead>
                 <tbody>
-                    <tr><td>MENSUALIDAD</td><td class="accent-v">${fmt(full)}</td></tr>
-                    <tr><td>TRIMESTRAL</td><td class="accent-v">${fmt(full * 3)}</td></tr>
-                    <tr><td>SEMESTRAL</td><td class="accent-v">${fmt(full * 6)}</td></tr>
-                    <tr><td>ANUAL TOTAL</td><td class="accent-v">${fmt(full * 12)}</td></tr>
+                    <tr><td>MENSUALIDAD FLEX</td><td class="accent-v">${fmt(full)}</td></tr>
+                    <tr><td>TRIMESTRAL ELITE</td><td class="accent-v">${fmt(full * 3)}</td></tr>
+                    <tr><td>SEMESTRAL PATRIMONIAL</td><td class="accent-v">${fmt(full * 6)}</td></tr>
+                    <tr><td>ANUAL GLOBAL</td><td class="accent-v">${fmt(full * 12)}</td></tr>
                 </tbody>
             </table>
 
-            <div class="footer">VALUIFY MASTER SYSTEM 5.0 | PROTOCOLO B.L.A.S.T. | PORTABLE DOSSIER HTML</div>
+            <div class="footer">VALUIFY MASTER SYSTEM 5.5 | PROTECTED BY OMNISHIELD GLOBAL</div>
         </div>
     </div>
 </body>
@@ -369,29 +378,37 @@
             setTimeout(() => {
                 const blob = new Blob([htmlDoc], { type: 'text/html' });
                 const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a'); a.href = url; a.download = `Valuify_Luxora_${title.replace(/\s+/g, '_')}.html`; a.click();
-                btn.innerText = mode === 'V' ? "EXPORTAR DOSSIER COMPLETO HTML" : "DESCARGAR MI DOSSIER LUXORA (.HTML)"; btn.disabled = false;
-                confetti({ particleCount: 250, spread: 100, colors: ['#059669', '#fbbf24', '#ffffff'] });
-            }, 1200);
+                const a = document.createElement('a'); a.href = url; a.download = `Valuify_Secure_${title.replace(/\s+/g, '_')}.html`; a.click();
+                btn.innerText = mode === 'V' ? "EXPORTAR DOSSIER ESTRUCTURAL (HTML)" : "OBTENER DOSSIER DE SEGURIDAD LUXORA"; btn.disabled = false;
+                confetti({ particleCount: 200, spread: 80, colors: ['#059669', '#111111'] });
+            }, 1400);
         }
 
         document.getElementById('v-form').onsubmit = (e) => {
             e.preventDefault();
-            const btn = document.getElementById('v-btn'); btn.innerText = "ESTUDIANDO ENTORNO..."; btn.disabled = true;
+            const btn = document.getElementById('v-btn'); btn.innerText = "CALIBRANDO ARCHIVOS..."; btn.disabled = true;
             setTimeout(() => {
                 const loc = document.getElementById('v-loc').value;
-                curVM2 = parseFloat(document.getElementById('v-m2').value);
-                curVRm = parseInt(document.getElementById('v-rm').value);
-                curVBt = parseInt(document.getElementById('v-bt').value);
-                curVAge = parseInt(document.getElementById('v-age').value);
+                const m2 = parseFloat(document.getElementById('v-m2').value);
+                const rm = parseInt(document.getElementById('v-rm').value);
+                const age = parseInt(document.getElementById('v-age').value);
                 const base = { 'madrid': 5222, 'barcelona': 4604, 'san sebastian': 6278, 'valencia': 2300 }[loc] || 2500;
-                curVal = curVM2 * base * (1 + (curVRm * 0.02)) * (1 + (curVBt * 0.03)) * (1 - (curVAge * 0.005));
+                
+                // Amenities logic
+                let co = 1.0;
+                if(document.getElementById('c-park').checked) co += 0.05;
+                if(document.getElementById('c-pool').checked) co += 0.08;
+                if(document.getElementById('c-wifi').checked) co += 0.01;
+                if(document.getElementById('c-cam').checked) co += 0.03;
+                if(document.getElementById('c-guard').checked) co += 0.06;
+
+                curVal = m2 * base * (1 + (rm * 0.02)) * (1 - (age * 0.005)) * co;
                 document.getElementById('v-price').innerText = fmt(curVal);
-                document.getElementById('v-details').innerText = `${loc.toUpperCase()} | ${curVM2} m2 | ${curVRm} HAB.`;
+                document.getElementById('v-details').innerText = `${loc.toUpperCase()} | ${m2} m2 | ${rm} HAB. | LUX AMENITIES`;
                 document.getElementById('v-view').style.display = 'block'; document.getElementById('hero-contain').style.display = 'none';
-                updateVTable(); btn.innerText = "INICIAR CONSULTA PREMIUM"; btn.disabled = false;
+                updateVTable(); btn.innerText = "GENERAR REPORTE COMPLETO"; btn.disabled = false;
                 confetti({ particleCount: 150, spread: 70, origin: { y: 0.7 }, colors: ['#059669'] });
-            }, 1400);
+            }, 1500);
         };
     </script>
 </body>
