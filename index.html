@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valuify | Final Financial Mastery & HTML Dossiers</title>
+    <title>Valuify | Final Financial Mastery & Portable HTML Dossiers</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,7 +149,7 @@
     <section class="market-section" id="market">
         <div style="text-align:center; margin-bottom:5rem;">
             <h2 style="font-family:'Playfair Display'; font-size:3.5rem;">The Luxora Collection</h2>
-            <p style="color:var(--text-gray);">Selecciona un activo para generar tu Dossier Interactivo en formato HTML.</p>
+            <p style="color:var(--text-gray);">Selecciona un activo para generar tu Dossier Interactivo Portátil (.html).</p>
         </div>
         <div class="property-grid" id="market-grid"></div>
     </section>
@@ -184,6 +184,9 @@
             </div>
         </div>
     </div>
+
+    <!-- CLEAN CANVAS FOR BASE64 CONVERSION -->
+    <canvas id="hidden-canvas" style="display:none"></canvas>
 
     <script>
         lucide.createIcons();
@@ -263,9 +266,19 @@
 
         function closeModal() { document.getElementById('p-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
 
+        // BASE64 HANDLER
+        function getBase64(imgElement) {
+            const canvas = document.getElementById('hidden-canvas');
+            canvas.width = imgElement.naturalWidth;
+            canvas.height = imgElement.naturalHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(imgElement, 0, 0);
+            return canvas.toDataURL('image/png');
+        }
+
         async function downloadDossier(mode) {
             const btn = document.getElementById(mode === 'V' ? 'v-dossier-btn' : 'm-dossier-btn');
-            btn.innerText = "COMPILANDO DOSSIER HTML..."; btn.disabled = true;
+            btn.innerText = "PROCÓSITO LUXORA: COMPILANDO HTML..."; btn.disabled = true;
 
             const full = mode === 'V' 
                 ? ((curVal * 0.8 * (curVRate/12)) / (1 - Math.pow(1 + (curVRate/12), -360))) + (curVal * curVIns / 12)
@@ -276,77 +289,84 @@
             const addr = mode === 'V' ? document.getElementById('v-details').innerText : curMAddr;
             const bank = mode === 'V' ? curVBank : curMBank;
             const ins = mode === 'V' ? curVInsN : curMInsN;
-            const imgSrc = mode === 'V' ? "hero_ref.png" : curMImg;
+            
+            // Get base64 for embedding
+            let base64Img = "";
+            try {
+                const imgEl = mode === 'V' ? document.querySelector('.hero-bg') : document.getElementById('m-img');
+                base64Img = getBase64(imgEl);
+            } catch(e) { 
+                base64Img = "https://alberto95gon-source.github.io/valuify-assessment-system/" + (mode === 'V' ? "hero_ref.png" : curMImg);
+            }
 
-            const htmlContent = `
+            const htmlDoc = `
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Dossier Luxora | ${title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
-        body { background: #0a0a0a; color: white; font-family: 'Outfit', sans-serif; padding: 4rem; text-align: center; }
-        .card { background: #111; border: 1px solid #333; border-radius: 40px; max-width: 800px; margin: 0 auto; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.5); }
-        .hero-img { width: 100%; height: 400px; object-fit: cover; }
-        .content { padding: 3rem; text-align: left; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 0.5rem; color: #10b981; }
-        .addr { color: #aaa; margin-bottom: 2rem; font-size: 1.1rem; }
-        .price-tag { font-size: 2.5rem; font-weight: 600; margin-bottom: 2rem; }
-        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 20px; }
-        .stat-item strong { display: block; color: #10b981; font-size: 1.2rem; }
-        table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
-        th { text-align: left; color: #777; font-size: 0.8rem; text-transform: uppercase; padding: 1rem; border-bottom: 1px solid #333; }
-        td { padding: 1.2rem; border-bottom: 1px solid #222; font-size: 1.1rem; }
-        .freq { font-weight: 600; color: #10b981; }
-        .footer { margin-top: 3rem; color: #555; font-size: 0.8rem; }
-        ${mode === 'M' && curMIsEaster ? '.easter-alert { background: #fbbf24; color: black; padding: 1rem; font-weight: bold; border-radius: 10px; margin-bottom: 2rem; text-align: center; }' : ''}
+        body { background: #0a0a0a; color: white; font-family: 'Outfit', sans-serif; padding: 3rem; margin: 0; }
+        .lux-card { background: #111; border: 1px solid #222; border-radius: 40px; max-width: 850px; margin: 2rem auto; overflow: hidden; box-shadow: 0 60px 120px rgba(0,0,0,0.8); }
+        .banner { width: 100%; height: 450px; object-fit: cover; }
+        .inner { padding: 4rem; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 0.2rem; color: #10b981; font-style: italic; }
+        .location { color: #888; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 2.5rem; }
+        .price-hero { font-size: 3rem; font-weight: 600; display: block; margin-bottom: 3rem; }
+        .grid-fin { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .box-fin { padding: 2rem; background: rgba(255,255,255,0.02); border: 1px solid #222; border-radius: 20px; }
+        .box-fin strong { display: block; color: #10b981; margin-bottom: 0.5rem; font-size: 0.8rem; letter-spacing: 1px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; color: #555; padding: 1.5rem 1rem; border-bottom: 2px solid #222; font-size: 0.7rem; letter-spacing: 1px; }
+        td { padding: 1.5rem 1rem; border-bottom: 1px solid #1a1a1a; font-size: 1.3rem; }
+        .val-freq { color: #10b981; font-weight: 600; }
+        .footer-tag { margin-top: 4rem; text-align: center; color: #333; font-size: 0.7rem; letter-spacing: 2px; }
+        ${mode === 'M' && curMIsEaster ? '.easter-ribbon { background: #fbbf24; color: black; padding: 1rem; font-weight: 900; text-align: center; font-size: 1.2rem; }' : ''}
     </style>
 </head>
 <body>
-    <div class="card">
-        <img src="https://alberto95gon-source.github.io/valuify-assessment-system/${imgSrc}" class="hero-img">
-        <div class="content">
-            ${mode === 'M' && curMIsEaster ? '<div class="easter-alert">OFERTA ESPECIAL: SEMANA SANTA -10% APLICADA</div>' : ''}
+    <div class="lux-card">
+        ${mode === 'M' && curMIsEaster ? '<div class="easter-ribbon">EVENTO SEMANA SANTA ACTIVADO: DESCUENTO DEL 10% INCLUIDO EN VALORACIÓN</div>' : ''}
+        <img src="${base64Img}" class="banner">
+        <div class="inner">
             <h1>${title}</h1>
-            <p class="addr">${addr}</p>
-            <div class="price-tag">${price}</div>
+            <p class="location">${addr}</p>
+            <span class="price-hero">${price}</span>
             
-            <div class="stats">
-                <div class="stat-item"><strong>Entidad Financiera</strong>${bank}</div>
-                <div class="stat-item"><strong>Seguro Patrimonial</strong>${ins}</div>
+            <div class="grid-fin">
+                <div class="box-fin"><strong>ALIANZA BANCARIA</strong>${bank}</div>
+                <div class="box-fin"><strong>PROTECCIÓN HOGAR</strong>${ins}</div>
             </div>
 
             <table>
-                <thead><tr><th>FRECUENCIA</th><th>PAGO ESTIMADO</th></tr></thead>
+                <thead><tr><th>MODALIDAD DE PAGO</th><th>DIVISIÓN PROYECTADA</th></tr></thead>
                 <tbody>
-                    <tr><td class="freq">Mensual</td><td>${fmt(full)}</td></tr>
-                    <tr><td class="freq">Trimestral</td><td>${fmt(full * 3)}</td></tr>
-                    <tr><td class="freq">Semestral</td><td>${fmt(full * 6)}</td></tr>
-                    <tr><td class="freq">Anual (Total)</td><td>${fmt(full * 12)}</td></tr>
+                    <tr><td>MENSUAL</td><td class="val-freq">${fmt(full)}</td></tr>
+                    <tr><td>TRIMESTRAL</td><td class="val-freq">${fmt(full * 3)}</td></tr>
+                    <tr><td>SEMESTRAL</td><td class="val-freq">${fmt(full * 6)}</td></tr>
+                    <tr><td>ANUAL (PLAN DE AHORRO)</td><td class="val-freq">${fmt(full * 12)}</td></tr>
                 </tbody>
             </table>
 
-            <div class="footer">
-                Generado por Valuify Master System 4.0 | Protocolo B.L.A.S.T. | Sincronización Bancaria: OK
-            </div>
+            <div class="footer-tag">VALUIFY MASTER SYSTEM 4.8 | PROTOCOLO B.L.A.S.T. ACCREDITED</div>
         </div>
     </div>
 </body>
 </html>`;
 
             setTimeout(() => {
-                const blob = new Blob([htmlContent], { type: 'text/html' });
+                const blob = new Blob([htmlDoc], { type: 'text/html' });
                 const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a'); a.href = url; a.download = `Dossier_${title.replace(/\s+/g, '_')}.html`; a.click();
+                const a = document.createElement('a'); a.href = url; a.download = `Luxora_Dossier_${title.replace(/\s+/g, '_')}.html`; a.click();
                 btn.innerText = mode === 'V' ? "EXPLORAR DOSSIER FINANCIERO HTML →" : "GENERAR DOSSIER LUXORA HTML →"; btn.disabled = false;
-                confetti({ particleCount: 200, spread: 80 });
-            }, 1000);
+                confetti({ particleCount: 200, spread: 90, colors: ['#10b981', '#ffffff'] });
+            }, 1200);
         }
 
         document.getElementById('v-form').onsubmit = (e) => {
             e.preventDefault();
-            const btn = document.getElementById('v-btn'); btn.innerText = "CALCULANDO..."; btn.disabled = true;
+            const btn = document.getElementById('v-btn'); btn.innerText = "COMPUTANDO..."; btn.disabled = true;
             setTimeout(() => {
                 const loc = document.getElementById('v-loc').value;
                 const m2 = parseFloat(document.getElementById('v-m2').value);
