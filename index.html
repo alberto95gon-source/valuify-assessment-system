@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valuify | High-End Property Assessment</title>
+    <title>Valuify | High-End Property & Finance Assessment</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
             --text-gray: #a1a1aa;
             --glass-bg: rgba(0, 0, 0, 0.4);
             --glass-border: rgba(255, 255, 255, 0.1);
+            --mortgage-blue: #3b82f6;
         }
 
         * {
@@ -55,19 +56,11 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.6);
-            /* Lent render animation */
             animation: slowZoom 20s ease-in-out infinite alternate, fadeInHero 2s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        @keyframes slowZoom {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
-        }
-
-        @keyframes fadeInHero {
-            from { opacity: 0; filter: blur(10px) brightness(0); }
-            to { opacity: 1; filter: blur(0) brightness(0.6); }
-        }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+        @keyframes fadeInHero { from { opacity: 0; filter: blur(10px) brightness(0); } to { opacity: 1; filter: blur(0) brightness(0.6); } }
 
         .hero-overlay {
             position: absolute;
@@ -75,7 +68,6 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(10,10,10,1));
         }
 
-        /* Nav */
         nav {
             position: fixed;
             top: 0;
@@ -98,24 +90,10 @@
             gap: 0.5rem;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 300;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            opacity: 0.7;
-        }
-
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 300; font-size: 0.9rem; transition: 0.3s; opacity: 0.7; }
         .nav-links a:hover { opacity: 1; color: var(--accent); }
 
-        /* Container & Content */
         .hero-container {
             position: relative;
             z-index: 10;
@@ -127,38 +105,12 @@
             align-items: center;
         }
 
-        .hero-text {
-            /* Slow entrance */
-            animation: slowSlideInLeft 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        }
+        .hero-text { animation: slowSlideInLeft 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+        @keyframes slowSlideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
 
-        @keyframes slowSlideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.1; margin-bottom: 2rem; font-weight: 400; }
+        .hero-text span { color: var(--accent); font-style: italic; }
 
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .hero-text span {
-            color: var(--accent);
-            font-style: italic;
-        }
-
-        .hero-text p {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            max-width: 500px;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        /* Form Card */
         .valuation-card {
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
@@ -169,191 +121,109 @@
             animation: slowFadeScale 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        @keyframes slowFadeScale {
-            from { opacity: 0; transform: translateY(30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
+        @keyframes slowFadeScale { from { opacity: 0; transform: translateY(30px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
-        .form-title {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
+        input, select { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white; outline: none; transition: 0.3s; width: 100%; }
+        input:focus { border-color: var(--accent); }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+        label { font-size: 0.7rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+        .file-upload { border: 2px dashed var(--glass-border); padding: 1.5rem; border-radius: 16px; text-align: center; cursor: pointer; transition: 0.3s; margin-top: 1rem; }
+        .file-upload:hover { border-color: var(--accent); background: var(--accent-soft); }
 
-        label {
-            font-size: 0.75rem;
-            color: var(--text-gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .btn-calculate { width: 100%; background: var(--accent); color: #000; border: none; padding: 1.25rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.4s; margin-top: 2rem; }
+        .btn-calculate:hover { opacity: 0.9; transform: translateY(-3px); }
 
-        input, select {
+        /* Results & Financials */
+        .results-section { display: none; padding: 4rem 5% 10rem; }
+        .results-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; }
+
+        .results-sidebar { position: sticky; top: 100px; }
+        .value-card { background: var(--glass-bg); padding: 3rem; border-radius: 32px; border: 1px solid var(--glass-border); text-align: center; }
+        .value-card h2 { font-size: 3rem; margin: 0.5rem 0; color: var(--accent); }
+
+        .finance-card { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 32px; padding: 3rem; }
+        .finance-card h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 2rem; }
+
+        .mortgage-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+        .mortgage-option {
             background: rgba(255,255,255,0.05);
             border: 1px solid var(--glass-border);
-            padding: 1rem;
-            border-radius: 12px;
-            color: white;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        input:focus { border-color: var(--accent); background: rgba(16, 185, 129, 0.05); }
-
-        /* Custom File Upload */
-        .file-upload {
-            border: 2px dashed var(--glass-border);
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
+            padding: 1.5rem;
+            border-radius: 20px;
             cursor: pointer;
             transition: 0.3s;
-            margin-bottom: 2rem;
+            text-align: left;
         }
+        .mortgage-option.active { border-color: var(--mortgage-blue); background: rgba(59, 130, 246, 0.1); }
+        .mortgage-option strong { display: block; margin-bottom: 0.3rem; font-size: 1.1rem; }
+        .mortgage-option span { font-size: 0.8rem; color: var(--text-gray); }
 
-        .file-upload:hover { border-color: var(--accent); background: var(--accent-soft); }
-        .file-upload p { font-size: 0.85rem; color: var(--text-gray); margin-top: 0.5rem; }
+        .insurance-grid { display: grid; gap: 1rem; margin-top: 2rem; }
+        .insurance-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            padding: 1.2rem 1.5rem;
+            border-radius: 16px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+        .insurance-item.active { border-color: var(--accent); background: var(--accent-soft); }
+        .insurance-info h4 { font-size: 0.9rem; font-weight: 500; }
+        .insurance-info p { font-size: 0.75rem; color: var(--text-gray); }
 
-        .btn-calculate {
-            width: 100%;
+        .total-payment-bar {
+            margin-top: 3rem;
             background: var(--accent);
             color: #000;
-            border: none;
-            padding: 1.25rem;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.4s;
+            padding: 2rem;
+            border-radius: 20px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.8rem;
         }
+        .total-payment-bar h4 { font-size: 0.9rem; text-transform: uppercase; }
+        .total-payment-bar .price { font-size: 2rem; font-weight: 700; }
 
-        .btn-calculate:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4); }
-
-        /* Results Screen */
-        .results-section {
-            display: none;
-            padding: 4rem 5% 10rem;
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .value-circle {
-            width: 100%;
-            aspect-ratio: 1;
-            border: 1px solid var(--glass-border);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
-            position: relative;
-        }
-
-        .value-circle h2 { font-size: 3rem; margin: 0.5rem 0; }
-        .value-circle span { color: var(--accent); font-size: 0.9rem; letter-spacing: 2px; }
-
-        /* Payment Plans Table */
-        .payment-plans {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 2.5rem;
-        }
-
-        .payment-plans h3 { margin-bottom: 1.5rem; font-weight: 400; font-size: 1.4rem; }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th { text-align: left; padding: 1rem; color: var(--text-gray); font-size: 0.8rem; border-bottom: 1px solid var(--glass-border); }
-        td { padding: 1.5rem 1rem; border-bottom: 1px solid var(--glass-border); }
-
-        .plan-name { font-weight: 600; color: var(--accent); }
-        .plan-price { font-size: 1.2rem; }
-
-        .btn-back {
-            background: transparent;
-            border: 1px solid var(--glass-border);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            cursor: pointer;
-            margin-top: 2rem;
-            transition: 0.3s;
-        }
+        .btn-back { margin-top: 3rem; background: transparent; border: 1px solid var(--glass-border); color: white; padding: 1rem 2rem; border-radius: 12px; cursor: pointer; transition: 0.3s; }
         .btn-back:hover { background: white; color: black; }
 
-        /* Responsive */
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+
         @media (max-width: 968px) {
-            .hero-container { grid-template-columns: 1fr; text-align: center; padding-top: 6rem; }
-            .hero-text h1 { font-size: 3rem; }
-            .hero-text p { margin: 0 auto 2rem; }
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
             .results-grid { grid-template-columns: 1fr; }
+            .results-sidebar { position: static; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">
-            <i data-lucide="building-2"></i> Valuify
-        </div>
+        <div class="logo"><i data-lucide="building-2"></i> Valuify</div>
         <div class="nav-links">
-            <a href="#">TASACIÓN</a>
-            <a href="#">PROPIEDADES</a>
-            <a href="#">CONTACTO</a>
+            <a href="#">VALORACIÓN</a>
+            <a href="#">HIPOTECAS</a>
+            <a href="#">SEGUROS</a>
         </div>
     </nav>
 
     <section class="hero" id="home">
-        <!-- Hero Background using reference image -->
         <img src="hero_ref.png" class="hero-bg" alt="Luxury Real Estate">
         <div class="hero-overlay"></div>
-
-        <div class="hero-container" id="input-container">
+        <div class="hero-container">
             <div class="hero-text">
-                <h1>Preserving <span>moments</span>, transforming spaces.</h1>
-                <p>Calcula el valor de tu propiedad con precisión arquitectónica y planes de pago a tu medida.</p>
+                <h1>Beyond <span>Value</span>, Financial Mastery.</h1>
+                <p>Calcula el valor de mercado e integra los planes hipotecarios y de seguridad más vanguardistas de 2026.</p>
             </div>
-
             <div class="valuation-card">
-                <div class="form-title">
-                    <i data-lucide="calculator" style="color:var(--accent)"></i>
-                    Calculador de Tasación
-                </div>
-
                 <form id="valuation-form">
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <div class="form-group" style="margin-bottom: 1rem;">
                         <label>Ubicación</label>
                         <select id="location" required>
                             <option value="madrid">Madrid</option>
@@ -364,39 +234,20 @@
                             <option value="nacional">Otras ciudades</option>
                         </select>
                     </div>
-
                     <div class="form-grid">
-                        <div class="form-group">
-                            <label>Metros Cuadrados</label>
-                            <input type="number" id="sq_meters" placeholder="Ej: 90" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Antigüedad</label>
-                            <input type="number" id="age" placeholder="Años" required>
-                        </div>
+                        <div class="form-group"><label>M2</label><input type="number" id="sq_meters" required></div>
+                        <div class="form-group"><label>Años</label><input type="number" id="age" required></div>
                     </div>
-
                     <div class="form-grid">
-                        <div class="form-group">
-                            <label>Habitaciones</label>
-                            <input type="number" id="rooms" placeholder="0" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Baños</label>
-                            <input type="number" id="bathrooms" placeholder="0" required>
-                        </div>
+                        <div class="form-group"><label>Hab.</label><input type="number" id="rooms" required></div>
+                        <div class="form-group"><label>Baños</label><input type="number" id="bathrooms" required></div>
                     </div>
-
-                    <label>Imágenes de la propiedad (Mejora la estimación)</label>
                     <div class="file-upload" onclick="document.getElementById('file-input').click()">
-                        <i data-lucide="upload-cloud" style="color:var(--accent)"></i>
-                        <p id="file-status">Haz clic para subir o arrastra imágenes</p>
+                        <i data-lucide="camera" style="color:var(--accent)"></i>
+                        <p id="file-status">Añade fotos para análisis técnico</p>
                         <input type="file" id="file-input" style="display:none" multiple onchange="updateFileCount()">
                     </div>
-
-                    <button type="submit" class="btn-calculate">
-                        Obtener Valoración Premium
-                    </button>
+                    <button type="submit" class="btn-calculate">Analizar Inmueble →</button>
                 </form>
             </div>
         </div>
@@ -404,51 +255,68 @@
 
     <section class="results-section" id="results">
         <div class="results-grid">
-            <div class="value-circle">
-                <span>ESTIMACIÓN TOTAL</span>
-                <h2 id="final-price">€ --</h2>
-                <div style="display:flex; gap: 1rem; font-size: 0.8rem; opacity: 0.6;">
-                    <p id="res-m2">€ --/m2</p> | <p id="res-location">Madrid</p>
+            <div class="results-sidebar">
+                <div class="value-card">
+                    <span>VALOR DE TASACIÓN</span>
+                    <h2 id="final-price">€ --</h2>
+                    <p id="res-m2" style="opacity:0.6">€ -- / m2</p>
                 </div>
+                <button class="btn-back" onclick="location.reload()">Nueva Tasación</button>
             </div>
 
-            <div class="payment-plans">
-                <h3>Planes de Pago Flexibles</h3>
-                <p style="color:var(--text-gray); font-size: 0.85rem; margin-bottom: 2rem;">Basado en una financiación del 80% del valor total.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>PLAN</th>
-                            <th>FRECUENCIA</th>
-                            <th>CUOTA ESTIMADA</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="plan-name">Mensual</td>
-                            <td>48 Cuotas</td>
-                            <td class="plan-price" id="pay-monthly">€ --</td>
-                        </tr>
-                        <tr>
-                            <td class="plan-name">Trimestral</td>
-                            <td>16 Cuotas</td>
-                            <td class="plan-price" id="pay-quarterly">€ --</td>
-                        </tr>
-                        <tr>
-                            <td class="plan-name">Semestral</td>
-                            <td>8 Cuotas</td>
-                            <td class="plan-price" id="pay-semi">€ --</td>
-                        </tr>
-                        <tr>
-                            <td class="plan-name">Anual</td>
-                            <td>4 Grandes Pagos</td>
-                            <td class="plan-price" id="pay-annual">€ --</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button class="btn-back" onclick="location.reload()">
-                    <i data-lucide="arrow-left" style="width:16px; display:inline; margin-right:5px"></i> Nueva Tasación
-                </button>
+            <div class="finance-card">
+                <h3>Planes Hipotecarios 2026</h3>
+                <div class="mortgage-selector">
+                    <div class="mortgage-option active" data-type="joven" onclick="selectMortgage(this)">
+                        <strong>Plan Joven Mastery</strong>
+                        <span>95% Finan / Mixta 1.5%</span>
+                    </div>
+                    <div class="mortgage-option" data-type="green" onclick="selectMortgage(this)">
+                        <strong>Hipoteca Green Path</strong>
+                        <span>80% Finan / Fija 2.1%</span>
+                    </div>
+                    <div class="mortgage-option" data-type="hybrid" onclick="selectMortgage(this)">
+                        <strong>Hybrid Pro</strong>
+                        <span>80% Finan / Mixta 1.75%</span>
+                    </div>
+                    <div class="mortgage-option" data-type="fixed" onclick="selectMortgage(this)">
+                        <strong>Standard Blue</strong>
+                        <span>80% Finan / Fija 2.5%</span>
+                    </div>
+                </div>
+
+                <h3>Seguros & Protección</h3>
+                <div class="insurance-grid">
+                    <div class="insurance-item active" data-cost="0.0005" onclick="toggleInsurance(this)">
+                        <div class="insurance-info">
+                            <h4>Seguro de Hogar Integral</h4>
+                            <p>Protección contra agua, fuego y daños estructurales.</p>
+                        </div>
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <div class="insurance-item" data-cost="0.0003" onclick="toggleInsurance(this)">
+                        <div class="insurance-info">
+                            <h4>Seguro de Vida Hipotecario</h4>
+                            <p>Seguridad total para tu familia en caso de imprevistos.</p>
+                        </div>
+                        <i data-lucide="heart-pulse"></i>
+                    </div>
+                    <div class="insurance-item" data-cost="0.00015" onclick="toggleInsurance(this)">
+                        <div class="insurance-info">
+                            <h4>Protección Contra Desempleo</h4>
+                            <p>Cubre tus cuotas ante pérdida lógica de ingresos.</p>
+                        </div>
+                        <i data-lucide="briefcase"></i>
+                    </div>
+                </div>
+
+                <div class="total-payment-bar">
+                    <div>
+                        <h4>Compromiso Mensual Total</h4>
+                        <p id="mortgage-desc">H. Joven + Seguro Hogar</p>
+                    </div>
+                    <div class="price" id="total-monthly">€ --</div>
+                </div>
             </div>
         </div>
     </section>
@@ -456,23 +324,29 @@
     <script>
         lucide.createIcons();
 
-        const BENCHMARKS = {
-            "madrid": 5222,
-            "barcelona": 4604,
-            "san sebastian": 6278,
-            "valencia": 2300,
-            "malaga": 3400,
-            "nacional": 2500
-        };
+        let currentValuation = 0;
+        let selectedMortgageType = 'joven';
+        const BENCHMARKS = { "madrid": 5222, "barcelona": 4604, "san sebastian": 6278, "valencia": 2300, "malaga": 3400, "nacional": 2500 };
 
         function updateFileCount() {
             const files = document.getElementById('file-input').files;
-            document.getElementById('file-status').innerText = files.length > 0 ? `${files.length} imágenes listas para analizar` : "Imágenes cargadas";
+            document.getElementById('file-status').innerText = files.length > 0 ? `${files.length} fotos analizadas` : "Fotos listas";
+        }
+
+        function selectMortgage(el) {
+            document.querySelectorAll('.mortgage-option').forEach(opt => opt.classList.remove('active'));
+            el.classList.add('active');
+            selectedMortgageType = el.dataset.type;
+            updateFinalCalculations();
+        }
+
+        function toggleInsurance(el) {
+            el.classList.toggle('active');
+            updateFinalCalculations();
         }
 
         document.getElementById('valuation-form').onsubmit = (e) => {
             e.preventDefault();
-            
             const area = parseFloat(document.getElementById('sq_meters').value);
             const loc = document.getElementById('location').value;
             const rooms = parseInt(document.getElementById('rooms').value);
@@ -481,38 +355,48 @@
             const imgCount = document.getElementById('file-input').files.length;
 
             const basePrice = BENCHMARKS[loc] || BENCHMARKS["nacional"];
-            
-            // Adjustments
-            const cRooms = 1 + (rooms * 0.02);
-            const cBaths = 1 + (baths * 0.03);
-            const cAge = Math.max(0.70, 1 - (age * 0.005));
-            const cImg = Math.min(1.05, 1 + (imgCount * 0.01)); // Bonus for providing visual proof
+            const cRooms = 1 + (rooms * 0.02), cBaths = 1 + (baths * 0.03);
+            const cAge = Math.max(0.70, 1 - (age * 0.005)), cImg = Math.min(1.05, 1 + (imgCount * 0.01));
 
-            const total = (area * basePrice) * (cRooms * cBaths * cAge * cImg);
-            const financedAmount = total * 0.8;
+            currentValuation = (area * basePrice) * (cRooms * cBaths * cAge * cImg);
+            document.getElementById('final-price').innerText = `€ ${Math.round(currentValuation).toLocaleString('de-DE')}`;
+            document.getElementById('res-m2').innerText = `€ ${Math.round(currentValuation/area).toLocaleString('de-DE')} / m2`;
 
-            // Display Results
-            document.getElementById('final-price').innerText = `€ ${Math.round(total).toLocaleString('de-DE')}`;
-            document.getElementById('res-m2').innerText = `€ ${Math.round(total/area).toLocaleString('de-DE')}/m2`;
-            document.getElementById('res-location').innerText = loc.toUpperCase();
-
-            // Payment Calculations
-            document.getElementById('pay-monthly').innerText = `€ ${Math.round(financedAmount / 48).toLocaleString('de-DE')}`;
-            document.getElementById('pay-quarterly').innerText = `€ ${Math.round(financedAmount / 16).toLocaleString('de-DE')}`;
-            document.getElementById('pay-semi').innerText = `€ ${Math.round(financedAmount / 8).toLocaleString('de-DE')}`;
-            document.getElementById('pay-annual').innerText = `€ ${Math.round(financedAmount / 4).toLocaleString('de-DE')}`;
-
-            // Reveal results
             document.getElementById('results').style.display = 'block';
-            window.scrollTo({ top: document.getElementById('results').offsetTop - 100, behavior: 'smooth' });
-            
-            confetti({
-                particleCount: 150,
-                spread: 70,
-                origin: { y: 0.6 },
-                colors: ['#10b981', '#ffffff']
-            });
+            window.scrollTo({ top: document.getElementById('results').offsetTop - 50, behavior: 'smooth' });
+            updateFinalCalculations();
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#10b981'] });
         };
+
+        function updateFinalCalculations() {
+            if (!currentValuation) return;
+
+            let rate = 0.025, financePerc = 0.8, term = 30;
+            let mortgageName = "Standard Blue";
+
+            switch(selectedMortgageType) {
+                case 'joven': rate = 0.015; financePerc = 0.95; mortgageName = "Plan Joven"; break;
+                case 'green': rate = 0.021; financePerc = 0.80; mortgageName = "Hipoteca Green"; break;
+                case 'hybrid': rate = 0.0175; financePerc = 0.80; mortgageName = "Hybrid Pro"; break;
+            }
+
+            const amount = currentValuation * financePerc;
+            const monthlyMortgage = (amount * (rate / 12)) / (1 - Math.pow(1 + (rate / 12), -term * 12));
+
+            let annualInsuranceTotal = 0;
+            let insuranceNames = [];
+            document.querySelectorAll('.insurance-item.active').forEach(item => {
+                annualInsuranceTotal += (parseFloat(item.dataset.cost) * currentValuation);
+                insuranceNames.push(item.querySelector('h4').innerText.split(' ')[2]); 
+            });
+
+            const monthlyInsurance = annualInsuranceTotal / 12;
+            const total = monthlyMortgage + monthlyInsurance;
+
+            document.getElementById('total-monthly').innerText = `€ ${Math.round(total).toLocaleString('de-DE')}`;
+            document.getElementById('mortgage-desc').innerText = `${mortgageName} + ${insuranceNames.length > 0 ? insuranceNames.join(', ') : 'Sin Seguros'}`;
+            lucide.createIcons();
+        }
     </script>
 </body>
 </html>

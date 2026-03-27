@@ -40,7 +40,18 @@ Provide a deterministic mathematical valuation for residential properties in Spa
    - **Semi-Annual**: $V \times 0.8 \div 8$
    - **Annual**: $V \times 0.8 \div 4$
 
-5. **Final Formula:**
+5. **Advanced Mortgage Variants (March 2026 Benchmarks):**
+   - **Plan Joven (Youth First):** 95% Financing, Mixed Rate (1.5% fixed for 7 years, then Euribor + 0.45%).
+   - **Hipoteca Sostenible (Green):** 80% Financing, Fixed Rate (2.1% fixed), specifically for efficient properties.
+   - **Plan Pro (Hybrid):** 80% Financing, Mixed Rate (1.75% fixed for 5 years, then Euribor + 0.55%).
+   - **Security Factor**: Life/Home insurance linked reduces TIN by 0.10%.
+
+6. **Insurance Options (Annual Estimates):**
+   - **Hogar (Home):** Base price $0.0005 \times V$ (Min 200€).
+   - **Vida (Life):** Base price $0.0003 \times V$ per owner.
+   - **Protección Pagos:** $0.0001 \times V$ (Job loss/disability).
+
+7. **Final Formula:**
    $V = (Area \times BasePrice) \times (C_{rooms} \times C_{baths} \times C_{terrace} \times C_{age} \times C_{img})$
 
 ## ⚠️ Edge Cases
