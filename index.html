@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valuify | High-End Property & Finance Assessment</title>
+    <title>Valuify | Financial Mastery & Luxury Market</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Confetti Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         :root {
@@ -24,181 +23,69 @@
             --mortgage-blue: #3b82f6;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-            scroll-behavior: smooth;
-        }
+        * { margin:0; padding:0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            overflow-x: hidden;
-        }
-
-        /* Hero Background Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.6);
-            animation: slowZoom 20s ease-in-out infinite alternate, fadeInHero 2s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
-        @keyframes fadeInHero { from { opacity: 0; filter: blur(10px) brightness(0); } to { opacity: 1; filter: blur(0) brightness(0.6); } }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(10,10,10,1));
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            animation: slideDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-links { display: flex; gap: 2.5rem; }
-        .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 300; font-size: 0.9rem; transition: 0.3s; opacity: 0.7; }
+        nav { position: fixed; top: 0; width: 100%; padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 0.5rem; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7; transition: 0.3s; }
         .nav-links a:hover { opacity: 1; color: var(--accent); }
 
-        .hero-container {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            padding: 0 5%;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
+        .hero { position: relative; height: 100vh; display: flex; align-items: center; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); animation: slowZoom 30s linear infinite alternate; }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, var(--bg-dark)); }
 
-        .hero-text { animation: slowSlideInLeft 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-        @keyframes slowSlideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+        .container { position: relative; z-index: 10; padding: 0 5%; width: 100%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; line-height: 1.1; margin-bottom: 2rem; animation: reveal 2s forwards; }
+        .hero-text p { color: var(--text-gray); font-size: 1.1rem; max-width: 500px; animation: reveal 2.5s forwards; }
+        @keyframes reveal { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
 
-        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.1; margin-bottom: 2rem; font-weight: 400; }
-        .hero-text span { color: var(--accent); font-style: italic; }
+        .valuation-box { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.8); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+        .group { display: flex; flex-direction: column; gap: 0.5rem; }
+        label { font-size: 0.65rem; text-transform: uppercase; color: var(--text-gray); letter-spacing: 1px; }
+        input, select { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white; outline: none; }
+        .btn-main { width: 100%; background: var(--accent); color: black; border: none; padding: 1.2rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.3s; margin-top: 1rem; }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(16,185,129,0.3); }
 
-        .valuation-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 32px;
-            padding: 3rem;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-            animation: slowFadeScale 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
+        /* Market Section */
+        .market-section { padding: 10rem 5%; background: var(--bg-dark); }
+        .section-header { margin-bottom: 4rem; text-align: center; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
+        .section-header p { color: var(--text-gray); font-size: 1rem; }
 
-        @keyframes slowFadeScale { from { opacity: 0; transform: translateY(30px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        .property-card { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 24px; overflow: hidden; transition: 0.4s; position: relative; }
+        .property-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.05); border-color: var(--accent); }
+        
+        .card-img { width: 100%; height: 280px; object-fit: cover; transition: 0.5s; }
+        .property-card:hover .card-img { transform: scale(1.05); filter: brightness(1.1); }
+        
+        .card-content { padding: 2rem; position: relative; }
+        .badge { position: absolute; top: -20px; right: 20px; background: var(--accent); color: black; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; }
+        
+        .card-content h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .card-address { font-size: 0.8rem; color: var(--text-gray); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        
+        .price-tag { font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem; }
+        .mortgage-summary { background: var(--accent-soft); padding: 1rem; border-radius: 12px; border-left: 3px solid var(--accent); margin-top: 1.5rem; }
+        .mortgage-summary p { font-size: 0.8rem; display: flex; justify-content: space-between; margin-bottom: 0.3rem; }
+        .mortgage-summary strong { color: var(--accent); }
 
-        input, select { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white; outline: none; transition: 0.3s; width: 100%; }
-        input:focus { border-color: var(--accent); }
+        /* Results Display */
+        .results-modal { display: none; padding: 6rem 5%; animation: fadeIn 1s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .results-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+        .value-summary { text-align: center; background: var(--glass-bg); padding: 4rem; border-radius: 40px; border: 1px solid var(--glass-border); }
+        .value-summary h2 { font-size: 4rem; color: var(--accent); margin-bottom: 1rem; }
 
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-        .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-        label { font-size: 0.7rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; }
-
-        .file-upload { border: 2px dashed var(--glass-border); padding: 1.5rem; border-radius: 16px; text-align: center; cursor: pointer; transition: 0.3s; margin-top: 1rem; }
-        .file-upload:hover { border-color: var(--accent); background: var(--accent-soft); }
-
-        .btn-calculate { width: 100%; background: var(--accent); color: #000; border: none; padding: 1.25rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.4s; margin-top: 2rem; }
-        .btn-calculate:hover { opacity: 0.9; transform: translateY(-3px); }
-
-        /* Results & Financials */
-        .results-section { display: none; padding: 4rem 5% 10rem; }
-        .results-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; }
-
-        .results-sidebar { position: sticky; top: 100px; }
-        .value-card { background: var(--glass-bg); padding: 3rem; border-radius: 32px; border: 1px solid var(--glass-border); text-align: center; }
-        .value-card h2 { font-size: 3rem; margin: 0.5rem 0; color: var(--accent); }
-
-        .finance-card { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 32px; padding: 3rem; }
-        .finance-card h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 2rem; }
-
-        .mortgage-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
-        .mortgage-option {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--glass-border);
-            padding: 1.5rem;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-align: left;
-        }
-        .mortgage-option.active { border-color: var(--mortgage-blue); background: rgba(59, 130, 246, 0.1); }
-        .mortgage-option strong { display: block; margin-bottom: 0.3rem; font-size: 1.1rem; }
-        .mortgage-option span { font-size: 0.8rem; color: var(--text-gray); }
-
-        .insurance-grid { display: grid; gap: 1rem; margin-top: 2rem; }
-        .insurance-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255,255,255,0.05);
-            padding: 1.2rem 1.5rem;
-            border-radius: 16px;
-            cursor: pointer;
-            border: 1px solid transparent;
-            transition: 0.3s;
-        }
-        .insurance-item.active { border-color: var(--accent); background: var(--accent-soft); }
-        .insurance-info h4 { font-size: 0.9rem; font-weight: 500; }
-        .insurance-info p { font-size: 0.75rem; color: var(--text-gray); }
-
-        .total-payment-bar {
-            margin-top: 3rem;
-            background: var(--accent);
-            color: #000;
-            padding: 2rem;
-            border-radius: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .total-payment-bar h4 { font-size: 0.9rem; text-transform: uppercase; }
-        .total-payment-bar .price { font-size: 2rem; font-weight: 700; }
-
-        .btn-back { margin-top: 3rem; background: transparent; border: 1px solid var(--glass-border); color: white; padding: 1rem 2rem; border-radius: 12px; cursor: pointer; transition: 0.3s; }
-        .btn-back:hover { background: white; color: black; }
-
-        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
-
+        .finance-panel { background: rgba(255,255,255,0.03); padding: 3rem; border-radius: 40px; border: 1px solid var(--glass-border); }
+        
         @media (max-width: 968px) {
-            .hero-container { grid-template-columns: 1fr; text-align: center; }
-            .results-grid { grid-template-columns: 1fr; }
-            .results-sidebar { position: static; }
+            .container, .results-container { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 3rem; }
         }
     </style>
 </head>
@@ -207,115 +94,119 @@
     <nav>
         <div class="logo"><i data-lucide="building-2"></i> Valuify</div>
         <div class="nav-links">
-            <a href="#">VALORACIÓN</a>
-            <a href="#">HIPOTECAS</a>
-            <a href="#">SEGUROS</a>
+            <a href="#home">TASAR</a>
+            <a href="#market">MERCADO</a>
+            <a href="#">FINANZAS</a>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <img src="hero_ref.png" class="hero-bg" alt="Luxury Real Estate">
         <div class="hero-overlay"></div>
-        <div class="hero-container">
+        <div class="container" id="main-ui">
             <div class="hero-text">
-                <h1>Beyond <span>Value</span>, Financial Mastery.</h1>
-                <p>Calcula el valor de mercado e integra los planes hipotecarios y de seguridad más vanguardistas de 2026.</p>
+                <h1>The Future of <span>valuation</span> is here.</h1>
+                <p>Análisis predictivo, simulaciones financieras y acceso exclusivo al mercado inmobiliario más cotizado de 2026.</p>
             </div>
-            <div class="valuation-card">
-                <form id="valuation-form">
-                    <div class="form-group" style="margin-bottom: 1rem;">
-                        <label>Ubicación</label>
-                        <select id="location" required>
-                            <option value="madrid">Madrid</option>
-                            <option value="barcelona">Barcelona</option>
-                            <option value="valencia">Valencia</option>
-                            <option value="malaga">Málaga</option>
-                            <option value="san sebastian">San Sebastián</option>
-                            <option value="nacional">Otras ciudades</option>
-                        </select>
-                    </div>
+            <div class="valuation-box">
+                <form id="val-form">
+                    <div class="group"><label>Ubicación</label><select id="loc"><option value="madrid">Madrid</option><option value="barcelona">Barcelona</option><option value="valencia">Valencia</option></select></div>
                     <div class="form-grid">
-                        <div class="form-group"><label>M2</label><input type="number" id="sq_meters" required></div>
-                        <div class="form-group"><label>Años</label><input type="number" id="age" required></div>
+                        <div class="group"><label>Metros (m2)</label><input type="number" id="m2" value="95"></div>
+                        <div class="group"><label>Hab.</label><input type="number" id="rm" value="3"></div>
                     </div>
-                    <div class="form-grid">
-                        <div class="form-group"><label>Hab.</label><input type="number" id="rooms" required></div>
-                        <div class="form-group"><label>Baños</label><input type="number" id="bathrooms" required></div>
+                    <div class="group" style="padding: 1.5rem; border: 1px dashed var(--glass-border); border-radius: 12px; text-align:center; cursor:pointer;" onclick="document.getElementById('img').click()">
+                        <i data-lucide="upload-cloud" style="color:var(--accent)"></i>
+                        <p style="font-size:0.7rem; margin-top:0.5rem; color:var(--text-gray)">Analizar estado por fotografías</p>
+                        <input type="file" id="img" style="display:none" multiple>
                     </div>
-                    <div class="file-upload" onclick="document.getElementById('file-input').click()">
-                        <i data-lucide="camera" style="color:var(--accent)"></i>
-                        <p id="file-status">Añade fotos para análisis técnico</p>
-                        <input type="file" id="file-input" style="display:none" multiple onchange="updateFileCount()">
-                    </div>
-                    <button type="submit" class="btn-calculate">Analizar Inmueble →</button>
+                    <button class="btn-main">OBTENER TASACIÓN</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="results-section" id="results">
-        <div class="results-grid">
-            <div class="results-sidebar">
-                <div class="value-card">
-                    <span>VALOR DE TASACIÓN</span>
-                    <h2 id="final-price">€ --</h2>
-                    <p id="res-m2" style="opacity:0.6">€ -- / m2</p>
+    <!-- Results (Hidden initially) -->
+    <section class="results-modal" id="results">
+        <div class="results-container">
+            <div class="value-summary">
+                <p style="text-transform:uppercase; font-size: 0.8rem; letter-spacing: 2px;">Valor Estimado</p>
+                <h2 id="out-v">-- €</h2>
+                <div id="out-det" style="opacity:0.6; font-size: 0.9rem">Madrid | 95 m2</div>
+            </div>
+            <div class="finance-panel">
+                <h3 style="font-family:'Playfair Display'; font-size: 2.5rem; margin-bottom: 2rem;">Estrategia Financiera</h3>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+                    <div style="background: rgba(255,255,255,0.05); padding:1.5rem; border-radius:16px;">
+                        <p style="font-size:0.7rem; color:var(--text-gray)">HIPOTECA RECOMENDADA</p>
+                        <h4 style="color:var(--accent); font-size:1.2rem; margin:0.5rem 0;">Plan Joven Mastery</h4>
+                        <p style="font-size:1.5rem; font-weight:700;" id="out-m1">-- €/mes</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding:1.5rem; border-radius:16px;">
+                        <p style="font-size:0.7rem; color:var(--text-gray)">PROTECCIÓN INTEGRAL</p>
+                        <h4 style="color:var(--accent); font-size:1.2rem; margin:0.5rem 0;">Seguro Pack Gold</h4>
+                        <p style="font-size:1.5rem; font-weight:700;" id="out-s1">-- €/mes</p>
+                    </div>
                 </div>
-                <button class="btn-back" onclick="location.reload()">Nueva Tasación</button>
+                <button class="btn-main" style="background:transparent; border: 1px solid var(--accent); color:var(--accent); margin-top: 2rem;" onclick="location.reload()">RE-TASAR</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section class="market-section" id="market">
+        <div class="section-header">
+            <h2>Propiedades Destacadas</h2>
+            <p>Oportunidades exclusivas con condiciones financieras pre-aprobadas bajo tu perfil.</p>
+        </div>
+
+        <div class="property-grid">
+            <!-- Property 1 -->
+            <div class="property-card">
+                <img src="listing_1.png" class="card-img" alt="Piso Madrid">
+                <div class="badge">TOP OFFER</div>
+                <div class="card-content">
+                    <h3>The Royal Penthouse</h3>
+                    <div class="card-address"><i data-lucide="map-pin"></i> Gran Vía 45, Planta 12, Madrid</div>
+                    <div class="price-tag">1.450.000 €</div>
+                    <p style="font-size:0.85rem; color:var(--text-gray); line-height:1.6;">Ático de lujo con vistas panorámicas, techos de 4m y acabados en mármol italiano. Financiación preferente Pro.</p>
+                    <div class="mortgage-summary">
+                        <p>Hipoteca Hybrid Pro 1.75%: <strong>3.950 € / mes</strong></p>
+                        <p>Seguro Hogar + Vida: <strong>115 € / mes</strong></p>
+                    </div>
+                </div>
             </div>
 
-            <div class="finance-card">
-                <h3>Planes Hipotecarios 2026</h3>
-                <div class="mortgage-selector">
-                    <div class="mortgage-option active" data-type="joven" onclick="selectMortgage(this)">
-                        <strong>Plan Joven Mastery</strong>
-                        <span>95% Finan / Mixta 1.5%</span>
-                    </div>
-                    <div class="mortgage-option" data-type="green" onclick="selectMortgage(this)">
-                        <strong>Hipoteca Green Path</strong>
-                        <span>80% Finan / Fija 2.1%</span>
-                    </div>
-                    <div class="mortgage-option" data-type="hybrid" onclick="selectMortgage(this)">
-                        <strong>Hybrid Pro</strong>
-                        <span>80% Finan / Mixta 1.75%</span>
-                    </div>
-                    <div class="mortgage-option" data-type="fixed" onclick="selectMortgage(this)">
-                        <strong>Standard Blue</strong>
-                        <span>80% Finan / Fija 2.5%</span>
+            <!-- Property 2 -->
+            <div class="property-card">
+                <img src="listing_2.png" class="card-img" alt="Villa Malaga">
+                <div class="badge">ECO FRIENDLY</div>
+                <div class="card-content">
+                    <h3>Mediterranean Oasis</h3>
+                    <div class="card-address"><i data-lucide="map-pin"></i> Calle del Sol 8, Marbella (Málaga)</div>
+                    <div class="price-tag">890.000 €</div>
+                    <p style="font-size:0.85rem; color:var(--text-gray); line-height:1.6;">Villa mediterránea con piscina infinitiy, jardines zen y sistema de climatización sostenible A++.</p>
+                    <div class="mortgage-summary">
+                        <p>Hipoteca Green Path 2.1%: <strong>2.640 € / mes</strong></p>
+                        <p>Seguro Integral Plus: <strong>85 € / mes</strong></p>
                     </div>
                 </div>
+            </div>
 
-                <h3>Seguros & Protección</h3>
-                <div class="insurance-grid">
-                    <div class="insurance-item active" data-cost="0.0005" onclick="toggleInsurance(this)">
-                        <div class="insurance-info">
-                            <h4>Seguro de Hogar Integral</h4>
-                            <p>Protección contra agua, fuego y daños estructurales.</p>
-                        </div>
-                        <i data-lucide="shield-check"></i>
+            <!-- Property 3 -->
+            <div class="property-card">
+                <img src="hero_ref.png" class="card-img" alt="Loft Barcelona">
+                <div class="badge">NEW LISTING</div>
+                <div class="card-content">
+                    <h3>Skyline Studio Loft</h3>
+                    <div class="card-address"><i data-lucide="map-pin"></i> Passatge de la Pau 12, Barcelona</div>
+                    <div class="price-tag">415.000 €</div>
+                    <p style="font-size:0.85rem; color:var(--text-gray); line-height:1.6;">Loft de concepto abierto, estilo industrial, ideal para inversores o jóvenes profesionales. Cerca del mar.</p>
+                    <div class="mortgage-summary">
+                        <p>Plan Joven Mastery 1.5%: <strong>1.120 € / mes</strong></p>
+                        <p>Seguro Multi-riesgo: <strong>45 € / mes</strong></p>
                     </div>
-                    <div class="insurance-item" data-cost="0.0003" onclick="toggleInsurance(this)">
-                        <div class="insurance-info">
-                            <h4>Seguro de Vida Hipotecario</h4>
-                            <p>Seguridad total para tu familia en caso de imprevistos.</p>
-                        </div>
-                        <i data-lucide="heart-pulse"></i>
-                    </div>
-                    <div class="insurance-item" data-cost="0.00015" onclick="toggleInsurance(this)">
-                        <div class="insurance-info">
-                            <h4>Protección Contra Desempleo</h4>
-                            <p>Cubre tus cuotas ante pérdida lógica de ingresos.</p>
-                        </div>
-                        <i data-lucide="briefcase"></i>
-                    </div>
-                </div>
-
-                <div class="total-payment-bar">
-                    <div>
-                        <h4>Compromiso Mensual Total</h4>
-                        <p id="mortgage-desc">H. Joven + Seguro Hogar</p>
-                    </div>
-                    <div class="price" id="total-monthly">€ --</div>
                 </div>
             </div>
         </div>
@@ -324,79 +215,32 @@
     <script>
         lucide.createIcons();
 
-        let currentValuation = 0;
-        let selectedMortgageType = 'joven';
-        const BENCHMARKS = { "madrid": 5222, "barcelona": 4604, "san sebastian": 6278, "valencia": 2300, "malaga": 3400, "nacional": 2500 };
+        const BENCH = { "madrid": 5222, "barcelona": 4604, "valencia": 2300 };
 
-        function updateFileCount() {
-            const files = document.getElementById('file-input').files;
-            document.getElementById('file-status').innerText = files.length > 0 ? `${files.length} fotos analizadas` : "Fotos listas";
-        }
-
-        function selectMortgage(el) {
-            document.querySelectorAll('.mortgage-option').forEach(opt => opt.classList.remove('active'));
-            el.classList.add('active');
-            selectedMortgageType = el.dataset.type;
-            updateFinalCalculations();
-        }
-
-        function toggleInsurance(el) {
-            el.classList.toggle('active');
-            updateFinalCalculations();
-        }
-
-        document.getElementById('valuation-form').onsubmit = (e) => {
+        document.getElementById('val-form').onsubmit = (e) => {
             e.preventDefault();
-            const area = parseFloat(document.getElementById('sq_meters').value);
-            const loc = document.getElementById('location').value;
-            const rooms = parseInt(document.getElementById('rooms').value);
-            const baths = parseInt(document.getElementById('bathrooms').value);
-            const age = parseInt(document.getElementById('age').value);
-            const imgCount = document.getElementById('file-input').files.length;
+            const l = document.getElementById('loc').value;
+            const m = parseFloat(document.getElementById('m2').value);
+            const r = parseInt(document.getElementById('rm').value);
+            const imgCount = document.getElementById('img').files.length;
 
-            const basePrice = BENCHMARKS[loc] || BENCHMARKS["nacional"];
-            const cRooms = 1 + (rooms * 0.02), cBaths = 1 + (baths * 0.03);
-            const cAge = Math.max(0.70, 1 - (age * 0.005)), cImg = Math.min(1.05, 1 + (imgCount * 0.01));
+            const base = BENCH[l] || 2500;
+            const factor = (1 + (r * 0.02)) * (1 + (imgCount * 0.01));
+            const total = m * base * factor;
 
-            currentValuation = (area * basePrice) * (cRooms * cBaths * cAge * cImg);
-            document.getElementById('final-price').innerText = `€ ${Math.round(currentValuation).toLocaleString('de-DE')}`;
-            document.getElementById('res-m2').innerText = `€ ${Math.round(currentValuation/area).toLocaleString('de-DE')} / m2`;
+            document.getElementById('out-v').innerText = Math.round(total).toLocaleString() + ' €';
+            document.getElementById('out-det').innerText = `${l.toUpperCase()} | ${m} m2 | ${r} Hab.`;
+            
+            // Financials
+            const monthlyHipo = (total * 0.8 * 0.017) / 12; // Hybrid estimate
+            document.getElementById('out-m1').innerText = Math.round(monthlyHipo).toLocaleString() + ' €';
+            document.getElementById('out-s1').innerText = Math.round(total * 0.00005).toLocaleString() + ' €';
 
             document.getElementById('results').style.display = 'block';
+            document.getElementById('main-ui').style.display = 'none';
             window.scrollTo({ top: document.getElementById('results').offsetTop - 50, behavior: 'smooth' });
-            updateFinalCalculations();
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#10b981'] });
+            confetti({ particleCount: 200, spread: 80, origin: { y: 0.7 }, colors: ['#10b981', '#fff'] });
         };
-
-        function updateFinalCalculations() {
-            if (!currentValuation) return;
-
-            let rate = 0.025, financePerc = 0.8, term = 30;
-            let mortgageName = "Standard Blue";
-
-            switch(selectedMortgageType) {
-                case 'joven': rate = 0.015; financePerc = 0.95; mortgageName = "Plan Joven"; break;
-                case 'green': rate = 0.021; financePerc = 0.80; mortgageName = "Hipoteca Green"; break;
-                case 'hybrid': rate = 0.0175; financePerc = 0.80; mortgageName = "Hybrid Pro"; break;
-            }
-
-            const amount = currentValuation * financePerc;
-            const monthlyMortgage = (amount * (rate / 12)) / (1 - Math.pow(1 + (rate / 12), -term * 12));
-
-            let annualInsuranceTotal = 0;
-            let insuranceNames = [];
-            document.querySelectorAll('.insurance-item.active').forEach(item => {
-                annualInsuranceTotal += (parseFloat(item.dataset.cost) * currentValuation);
-                insuranceNames.push(item.querySelector('h4').innerText.split(' ')[2]); 
-            });
-
-            const monthlyInsurance = annualInsuranceTotal / 12;
-            const total = monthlyMortgage + monthlyInsurance;
-
-            document.getElementById('total-monthly').innerText = `€ ${Math.round(total).toLocaleString('de-DE')}`;
-            document.getElementById('mortgage-desc').innerText = `${mortgageName} + ${insuranceNames.length > 0 ? insuranceNames.join(', ') : 'Sin Seguros'}`;
-            lucide.createIcons();
-        }
     </script>
 </body>
 </html>
