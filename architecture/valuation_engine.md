@@ -40,16 +40,16 @@ Provide a deterministic mathematical valuation for residential properties in Spa
    - **Semi-Annual**: $V \times 0.8 \div 8$
    - **Annual**: $V \times 0.8 \div 4$
 
-5. **Advanced Mortgage Variants (March 2026 Benchmarks):**
-   - **Plan Joven (Youth First):** 95% Financing, Mixed Rate (1.5% fixed for 7 years, then Euribor + 0.45%).
-   - **Hipoteca Sostenible (Green):** 80% Financing, Fixed Rate (2.1% fixed), specifically for efficient properties.
-   - **Plan Pro (Hybrid):** 80% Financing, Mixed Rate (1.75% fixed for 5 years, then Euribor + 0.55%).
-   - **Security Factor**: Life/Home insurance linked reduces TIN by 0.10%.
+5. **Entidades Hipotecarias Autorizadas (Marcas de Lujo):**
+   - **Summit Capital - Peak Rate (Fija)**: 2.35% TIN (Estabilidad absoluta para propiedades premium).
+   - **Nexus Finance - Dynamic Flow (Variable)**: Euribor (2.22%) + 0.52% Diferencial (Agilidad y potencia financiera).
+   - **Apex Mortgage - Hybrid Guard (Mixta)**: 1.8% durante los primeros 10 años, luego variable (La opción más versátil).
+   - **Zenith Real - Eco-Shield (Green)**: 2.10% TIN bonificado para construcciones con certificado A++.
 
-6. **Insurance Options (Annual Estimates):**
-   - **Hogar (Home):** Base price $0.0005 \times V$ (Min 200€).
-   - **Vida (Life):** Base price $0.0003 \times V$ per owner.
-   - **Protección Pagos:** $0.0001 \times V$ (Job loss/disability).
+6. **OmniGuard - Seguros & Protección Patrimonial:**
+   - **Total Shield (Hogar)**: Protección total contra daños, robo e imprevistos lógicos.
+   - **Veridian Asset (Vida)**: Seguro de vida vinculado que reduce el TIN hipotecario en 0.10%.
+   - **Continuum Safe (Protección)**: Garantía de pagos ante situaciones de desempleo o incapacidad.
 
 7. **Final Formula:**
    $V = (Area \times BasePrice) \times (C_{rooms} \times C_{baths} \times C_{terrace} \times C_{age} \times C_{img})$

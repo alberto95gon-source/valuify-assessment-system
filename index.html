@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valuify | Final Financial Mastery 2026</title>
+    <title>Valuify | Luxora Financial Ecosystem</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,16 +18,15 @@
             --accent-soft: rgba(16, 185, 129, 0.1);
             --text-light: #ffffff;
             --text-gray: #a1a1aa;
-            --glass-bg: rgba(0, 0, 0, 0.4);
+            --glass-bg: rgba(0, 0, 0, 0.6);
             --glass-border: rgba(255, 255, 255, 0.1);
-            --mortgage-blue: #3b82f6;
         }
 
         * { margin:0; padding:0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: hidden; }
 
         /* Nav */
-        nav { position: fixed; top: 0; width: 100%; padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); }
+        nav { position: fixed; top: 0; width: 100%; padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; backdrop-filter: blur(10px); }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 0.5rem; }
         .nav-links { display: flex; gap: 2rem; }
         .nav-links a { color: white; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.7; transition: 0.3s; }
@@ -36,56 +35,52 @@
         /* Hero */
         .hero { position: relative; height: 100vh; display: flex; align-items: center; overflow: hidden; }
         .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); animation: slowZoom 40s linear infinite alternate; }
-        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.15); } }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
         .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, var(--bg-dark)); }
 
-        .container { position: relative; z-index: 10; padding: 0 5%; width: 100%; display: grid; grid-template-columns: 1.3fr 1fr; gap: 4rem; align-items: center; }
+        .container { position: relative; z-index: 10; padding: 0 5%; width: 100%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 5rem; line-height: 1.1; margin-bottom: 2rem; }
         .hero-text span { color: var(--accent); font-style: italic; }
 
-        /* Box */
-        .glass-box { background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 40px; box-shadow: 0 50px 100px rgba(0,0,0,0.9); }
+        /* Glass Box */
+        .glass-box { background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 40px; box-shadow: 0 50px 100px rgba(0,0,0,0.8); }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
         label { font-size: 0.65rem; text-transform: uppercase; color: var(--text-gray); letter-spacing: 1.5px; margin-bottom: 0.3rem; display: block; }
         input, select { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 1rem; border-radius: 12px; color: white; outline: none; width: 100%; transition: 0.3s; }
         .btn-prime { width: 100%; background: var(--accent); color: black; border: none; padding: 1.25rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.4s; margin-top: 1rem; }
-        .btn-prime:hover { transform: translateY(-3px); }
 
-        /* Market */
+        /* Market Section */
         .market-section { padding: 8rem 5%; background: var(--bg-dark); }
         .property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
         .property-card { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 28px; overflow: hidden; cursor: pointer; transition: 0.4s; position: relative; }
         .property-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.05); border-color: var(--accent); }
-        .card-img { width: 100%; height: 300px; object-fit: cover; transition: 0.5s; }
+        .card-img { width: 100%; height: 300px; object-fit: cover; }
         .card-body { padding: 2rem; }
         .card-body h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 0.5rem; }
-        .card-price { font-size: 1.8rem; font-weight: 600; color: var(--accent); }
+
+        /* ADVANCED FINANCIAL UI */
+        .finance-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+        .entity-card { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); padding: 1.2rem; border-radius: 20px; cursor: pointer; transition: 0.3s; border: 1px solid transparent; }
+        .entity-card.active { border-color: var(--accent); background: var(--accent-soft); }
+        .entity-card strong { display: block; font-size: 0.9rem; margin-bottom: 0.2rem; }
+        .entity-card span { font-size: 0.7rem; color: var(--text-gray); }
+
+        .payment-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+        .payment-table th { text-align: left; color: var(--text-gray); padding: 0.8rem; border-bottom: 1px solid var(--glass-border); font-size: 0.7rem; }
+        .payment-table td { padding: 1rem 0.8rem; border-bottom: 1px solid var(--glass-border); font-size: 0.95rem; }
+        .pay-freq { font-weight: 600; color: var(--accent); }
 
         /* Modal */
         .modal { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); padding: 5%; overflow-y: auto; }
-        .modal-content { background: #111; border: 1px solid var(--glass-border); border-radius: 40px; max-width: 1000px; margin: 0 auto; overflow: hidden; animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1); min-height: 80vh; }
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .modal-grid { display: grid; grid-template-columns: 1fr 1fr; }
-        .modal-img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-content { background: #111; border: 1px solid var(--glass-border); border-radius: 40px; max-width: 1100px; margin: 0 auto; overflow: hidden; animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .modal-inner { display: grid; grid-template-columns: 1fr 1.2fr; }
         .modal-info { padding: 3rem; }
         .modal-close { position: absolute; top: 2rem; right: 4rem; background: var(--accent); color: black; border: none; padding: 1rem; border-radius: 50%; cursor: pointer; z-index: 210; }
 
-        .specs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin: 2rem 0; }
-        .spec-item { background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 12px; text-align: center; }
-        .spec-item span { display: block; font-size: 0.55rem; color: var(--text-gray); text-transform: uppercase; }
-        .spec-item strong { display: block; font-size: 1rem; margin-top: 0.2rem; }
-
-        .finance-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
-        .finance-table th { text-align: left; color: var(--text-gray); padding: 0.8rem; border-bottom: 1px solid var(--glass-border); font-size: 0.7rem; letter-spacing: 1px; }
-        .finance-table td { padding: 1rem 0.8rem; border-bottom: 1px solid var(--glass-border); font-size: 0.95rem; }
-        .freq-label { font-weight: 600; color: var(--accent); }
-        .payment-val { font-weight: 700; color: white; }
-
-        /* Valuation View */
         .valuation-view { display: none; padding: 8rem 5%; }
-        .v-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+        .v-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
 
-        @media (max-width: 968px) { .container, .modal-grid, .v-grid { grid-template-columns: 1fr; } .hero-text h1 { font-size: 3rem; } }
+        @media (max-width: 968px) { .container, .modal-inner, .v-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -93,69 +88,91 @@
     <nav>
         <div class="logo"><i data-lucide="building-2"></i> Valuify</div>
         <div class="nav-links">
-            <a href="#home" onclick="resetViews()">TASAR</a>
+            <a href="#home" onclick="location.reload()">RE-TASAR</a>
             <a href="#market">MERCADO</a>
-            <a href="https://github.com/alberto95gon-source/valuify-assessment-system" target="_blank">GITHUB</a>
+            <a href="#">ENTIDADES</a>
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero" id="home">
         <img src="hero_ref.png" class="hero-bg" alt="Luxury Real Estate">
         <div class="hero-overlay"></div>
-        <div class="container" id="hero-container">
+        <div class="container" id="hero-contain">
             <div class="hero-text">
-                <h1>Beyond <span>Structure</span>, Absolute Wealth.</h1>
-                <p>Ingeniería financiera avanzada 2026. Calcula tu patrimonio e inversión con precisión absoluta.</p>
+                <h1>The <span>Financial</span> Mastery of Space.</h1>
+                <p>Gestiona tu patrimonio con marcas bancarias de élite y seguros disruptivos diseñados para el 2026.</p>
             </div>
             <div class="glass-box">
                 <form id="v-form">
                     <label>Ubicación</label>
-                    <select id="v-loc">
-                        <option value="madrid">Madrid</option>
-                        <option value="barcelona">Barcelona</option>
-                        <option value="valencia">Valencia</option>
-                    </select>
+                    <select id="v-loc"><option value="madrid">Madrid</option><option value="barcelona">Barcelona</option><option value="valencia">Valencia</option></select>
                     <div class="form-grid">
-                        <div class="group"><label>Metros (m2)</label><input type="number" id="v-m2" value="105"></div>
-                        <div class="group"><label>Antigüedad</label><input type="number" id="v-age" value="3"></div>
+                        <div class="group"><label>Metros (m2)</label><input type="number" id="v-m2" value="100"></div>
+                        <div class="group"><label>Antigüedad</label><input type="number" id="v-age" value="5"></div>
                     </div>
                     <div class="form-grid">
                         <div class="group"><label>Hab.</label><input type="number" id="v-rm" value="3"></div>
                         <div class="group"><label>Baños</label><input type="number" id="v-bt" value="2"></div>
                     </div>
-                    <button class="btn-prime">ANALIZAR MI PROPIEDAD</button>
+                    <button class="btn-prime">INICIAR EVALUACIÓN FINANCIERA</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Valuation Result -->
+    <!-- Valuation Screen -->
     <section class="valuation-view" id="v-view">
         <div class="v-grid">
             <div class="glass-box" style="text-align:center;">
-                <p style="text-transform:uppercase; font-size:0.7rem; letter-spacing:2px; margin-bottom:1rem;">Resultado de Tasación</p>
-                <h2 id="v-price" style="font-size:3.5rem; color:var(--accent); margin-bottom:1rem;">-- €</h2>
+                <p style="text-transform:uppercase; font-size:0.7rem; letter-spacing:2px; margin-bottom:1rem;">Valor Patrimonial</p>
+                <h2 id="v-price" style="font-size:3.5rem; color:var(--accent); margin-bottom:1.5rem;">-- €</h2>
                 <div id="v-details" style="opacity:0.6; font-size:0.9rem;">Madrid | 100 m2</div>
             </div>
             <div class="glass-box">
-                <h3 style="font-family:'Playfair Display'; font-size:2rem; margin-bottom:2rem;">Frecuencias de Pago (Simulación)</h3>
-                <table class="finance-table">
-                    <thead><tr><th>PERIODICIDAD</th><th>CUOTA ESTIMADA (H. MIXTA)</th></tr></thead>
-                    <tbody id="v-pay-table">
-                        <!-- Populated by JS -->
-                    </tbody>
+                <h3 style="margin-bottom:2rem; font-family:'Playfair Display'; font-size:1.8rem;">Entidades Hipotecarias Autorizadas</h3>
+                <div class="finance-selector" id="mortgage-entities">
+                    <div class="entity-card active" data-rate="0.0235" onclick="selectEnt(this, 'm')">
+                        <strong>Summit Capital</strong>
+                        <span>Peak Rate (Fija 2.35%)</span>
+                    </div>
+                    <div class="entity-card" data-rate="0.0274" onclick="selectEnt(this, 'm')">
+                        <strong>Nexus Finance</strong>
+                        <span>Dynamic Flow (Var. 2.74%)</span>
+                    </div>
+                    <div class="entity-card" data-rate="0.018" onclick="selectEnt(this, 'm')">
+                        <strong>Apex Mortgage</strong>
+                        <span>Hybrid Guard (Mixta 1.8%)</span>
+                    </div>
+                    <div class="entity-card" data-rate="0.021" onclick="selectEnt(this, 'm')">
+                        <strong>Zenith Real</strong>
+                        <span>Eco-Shield (Green 2.1%)</span>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom:1.5rem; font-family:'Playfair Display'; font-size:1.8rem;">Seguro Patrimonial OmniGuard</h3>
+                <div class="finance-selector" id="insurance-entities">
+                    <div class="entity-card active" data-cost="0.0005" onclick="selectEnt(this, 'i')">
+                        <strong>Total Shield</strong>
+                        <span>Cobertura de Daños lógicos</span>
+                    </div>
+                    <div class="entity-card" data-cost="0.0008" onclick="selectEnt(this, 'i')">
+                        <strong>Veridian Asset</strong>
+                        <span>Vida + Hogar Premium</span>
+                    </div>
+                </div>
+
+                <table class="payment-table">
+                    <thead><tr><th>FRECUENCIA</th><th>CUOTA ESTIMADA (FINANCIACIÓN 80%)</th></tr></thead>
+                    <tbody id="v-pay-body"></tbody>
                 </table>
-                <button class="btn-prime" style="background:transparent; border:1px solid var(--accent); color:var(--accent); margin-top:2rem;" onclick="location.reload()">RE-TASAR</button>
             </div>
         </div>
     </section>
 
-    <!-- Market -->
     <section class="market-section" id="market">
         <div style="text-align:center; margin-bottom:5rem;">
-            <h2 style="font-family:'Playfair Display'; font-size:3.5rem;">Luxury Market 2026</h2>
-            <p style="color:var(--text-gray);">Selecciona un activo para ver el desglose financiero en diferentes periodos.</p>
+            <h2 style="font-family:'Playfair Display'; font-size:3.5rem;">Luxury Market Hub</h2>
+            <p style="color:var(--text-gray);">Propiedades listas para ser adquiridas con planes Summit o Apex.</p>
         </div>
         <div class="property-grid" id="market-grid"></div>
     </section>
@@ -164,28 +181,19 @@
     <div class="modal" id="p-modal">
         <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
         <div class="modal-content">
-            <div class="modal-grid">
-                <img src="" id="m-img" class="modal-img">
+            <div class="modal-inner">
+                <img src="" id="m-img" style="width:100%; height:100%; object-fit:cover;">
                 <div class="modal-info">
-                    <h2 id="m-title" style="font-family:'Playfair Display'; font-size:2.5rem; margin-bottom:0.5rem;"></h2>
-                    <p id="m-addr" style="color:var(--text-gray); margin-bottom:2rem; font-size:0.9rem;"></p>
-                    
-                    <div class="specs-grid">
-                        <div class="spec-item"><i data-lucide="layout"></i><span>Metros</span><strong id="m-m2"></strong></div>
-                        <div class="spec-item"><i data-lucide="home"></i><span>Hab.</span><strong id="m-rm"></strong></div>
-                        <div class="spec-item"><i data-lucide="droplets"></i><span>Baños</span><strong id="m-bt"></strong></div>
-                        <div class="spec-item"><i data-lucide="trees"></i><span>Jardín</span><strong id="m-gd"></strong></div>
-                        <div class="spec-item"><i data-lucide="calendar"></i><span>Edad</span><strong id="m-ag"></strong></div>
-                        <div class="spec-item"><i data-lucide="award"></i><span>Clase</span><strong>A++</strong></div>
+                    <h2 id="m-title" style="font-family:'Playfair Display'; font-size:2.5rem; margin-bottom:1rem;"></h2>
+                    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0.5rem; margin-bottom:1.5rem;">
+                        <input value="180 m2" disabled id="m-m2"><input value="4 Hab" disabled id="m-rm"><input value="3 Baños" disabled id="m-bt">
                     </div>
-
-                    <h3 style="margin:2rem 0 1rem; font-weight:400; font-size:1.4rem;">Opciones de Financiamiento (Basado en Precio Inicial)</h3>
-                    <table class="finance-table">
-                        <thead><tr><th>FRECUENCIA</th><th>CUOTA (AMORTIZACIÓN + SEGURO)</th></tr></thead>
-                        <tbody id="m-pay-body">
-                            <!-- Dynamic frequencies -->
-                        </tbody>
+                    <p style="font-size:0.7rem; color:var(--text-gray); margin-bottom:0.5rem;">FRECUENCIAS DE PAGO ESTIMADAS</p>
+                    <table class="payment-table">
+                        <thead><tr><th>Frecuencia</th><th>Cuota (Summit Capital)</th></tr></thead>
+                        <tbody id="m-pay-body"></tbody>
                     </table>
+                    <button class="btn-prime" style="margin-top:2rem;">SOLICITAR DOSSIER LUXORA</button>
                 </div>
             </div>
         </div>
@@ -194,107 +202,74 @@
     <script>
         lucide.createIcons();
 
-        const PROPERTIES = [
-            {
-                id: 1, title: 'Royal Penthouse Gran Vía', addr: 'Gran Vía 45, Planta 12, Madrid', 
-                basePrice: 1450000, m2: 180, rm: 4, bt: 3, gd: 'Terraza 40m2', age: 2, 
-                img: 'listing_1.png'
-            },
-            {
-                id: 2, title: 'Mediterranean Oasis Villa', addr: 'Calle del Sol 8, Marbella (Málaga)', 
-                basePrice: 890000, m2: 250, rm: 5, bt: 4, gd: 'Privado 300m2', age: 0, 
-                img: 'listing_2.png'
-            },
-            {
-                id: 3, title: 'Skyline Studio Loft', addr: 'Passatge de la Pau 12, Barcelona', 
-                basePrice: 415000, m2: 85, rm: 1, bt: 1, gd: 'No', age: 10, 
-                img: 'hero_ref.png'
-            }
+        let curVal = 0;
+        let curRate = 0.0235;
+        let curIns = 0.0005;
+
+        const PROPS = [
+            { title: 'The Royal Penthouse', loc: 'Madrid', price: 1450000, m2: 180, rm: 4, bt: 3, img: 'listing_1.png' },
+            { title: 'Mediterranean Oasis', loc: 'Marbella', price: 890000, m2: 250, rm: 5, bt: 4, img: 'listing_2.png' },
+            { title: 'Skyline Studio Loft', loc: 'Barcelona', price: 420000, m2: 85, rm: 1, bt: 1, img: 'hero_ref.png' }
         ];
 
-        // Format Currency
-        const fmt = (v) => v.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+        const fmt = (v) => v.toLocaleString('de-DE', { minimumFractionDigits: 2 }) + ' €';
 
-        // Init Market
         const grid = document.getElementById('market-grid');
-        PROPERTIES.forEach(p => {
-            const card = document.createElement('div');
-            card.className = 'property-card';
-            card.onclick = () => openModal(p);
-            card.innerHTML = `
-                <img src="${p.img}" class="card-img">
-                <div class="card-body">
-                    <h3>${p.title}</h3>
-                    <p class="card-price">${fmt(p.basePrice)}</p>
-                    <p style="color:var(--text-gray); font-size:0.8rem; margin-top:0.5rem;"><i data-lucide="map-pin" style="width:12px"></i> ${p.addr}</p>
-                </div>
-            `;
+        PROPS.forEach(p => {
+            const card = document.createElement('div'); card.className = 'property-card'; card.onclick = () => openModal(p);
+            card.innerHTML = `<img src="${p.img}" class="card-img"><div class="card-body"><h3>${p.title}</h3><p style="font-size:1.8rem; color:var(--accent); font-weight:600;">${fmt(p.price)}</p></div>`;
             grid.appendChild(card);
         });
-        lucide.createIcons();
+
+        function selectEnt(el, type) {
+            const parent = el.parentElement;
+            [...parent.children].forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            if(type === 'm') curRate = parseFloat(el.dataset.rate);
+            if(type === 'i') curIns = parseFloat(el.dataset.cost);
+            updateVTable();
+        }
+
+        function updateVTable() {
+            if(!curVal) return;
+            const baseMonth = (curVal * 0.8 * (curRate/12)) / (1 - Math.pow(1 + (curRate/12), -360));
+            const insMonth = (curVal * curIns) / 12;
+            const full = baseMonth + insMonth;
+            document.getElementById('v-pay-body').innerHTML = `
+                <tr><td class="pay-freq">Mensual</td><td>${fmt(full)}</td></tr>
+                <tr><td class="pay-freq">Trimestral</td><td>${fmt(full * 3)}</td></tr>
+                <tr><td class="pay-freq">Semestral</td><td>${fmt(full * 6)}</td></tr>
+                <tr><td class="pay-freq">Anual</td><td>${fmt(full * 12)}</td></tr>
+            `;
+        }
 
         function openModal(p) {
             document.getElementById('m-img').src = p.img;
             document.getElementById('m-title').innerText = p.title;
-            document.getElementById('m-addr').innerText = p.addr;
-            document.getElementById('m-m2').innerText = p.m2 + ' m2';
-            document.getElementById('m-rm').innerText = p.rm;
-            document.getElementById('m-bt').innerText = p.bt;
-            document.getElementById('m-gd').innerText = p.gd;
-            document.getElementById('m-ag').innerText = p.age + ' años';
-            
-            // Generate Frequencies (based on initial price * 0.8 / 30 years)
-            const baseMonthly = (p.basePrice * 0.8 * 0.02 / 12); // Sample 2% rate over 30y simplified
-            const ins = (p.basePrice * 0.0001); // Monthly insurance
-            const m = baseMonthly + ins;
-
-            const body = document.getElementById('m-pay-body');
-            body.innerHTML = `
-                <tr><td class="freq-label">Mensual</td><td class="payment-val">${fmt(m)}</td></tr>
-                <tr><td class="freq-label">Trimestral</td><td class="payment-val">${fmt(m * 3)}</td></tr>
-                <tr><td class="freq-label">Semestral</td><td class="payment-val">${fmt(m * 6)}</td></tr>
-                <tr><td class="freq-label">Anual</td><td class="payment-val">${fmt(m * 12)}</td></tr>
+            const baseM = (p.price * 0.8 * (0.0235/12)) / (1 - Math.pow(1 + (0.0235/12), -360)) + (p.price * 0.0005/12);
+            document.getElementById('m-pay-body').innerHTML = `
+                <tr><td class="pay-freq">Mensual</td><td>${fmt(baseM)}</td></tr>
+                <tr><td class="pay-freq">Trimestral</td><td>${fmt(baseM * 3)}</td></tr>
+                <tr><td class="pay-freq">Anual</td><td>${fmt(baseM * 12)}</td></tr>
             `;
-
             document.getElementById('p-modal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
         }
 
-        function closeModal() {
-            document.getElementById('p-modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+        function closeModal() { document.getElementById('p-modal').style.display = 'none'; }
 
-        function resetViews() {
-            document.getElementById('hero-container').style.display = 'grid';
-            document.getElementById('v-view').style.display = 'none';
-        }
-
-        // Home Valuation
         document.getElementById('v-form').onsubmit = (e) => {
             e.preventDefault();
             const loc = document.getElementById('v-loc').value;
             const m2 = parseFloat(document.getElementById('v-m2').value);
             const rm = parseInt(document.getElementById('v-rm').value);
             const base = { 'madrid': 5222, 'barcelona': 4604, 'valencia': 2300 }[loc] || 2500;
-            const total = m2 * base * (1 + (rm * 0.02));
-
-            document.getElementById('v-price').innerText = fmt(total);
+            curVal = m2 * base * (1 + (rm * 0.02));
+            document.getElementById('v-price').innerText = fmt(curVal);
             document.getElementById('v-details').innerText = `${loc.toUpperCase()} | ${m2} m2 | ${rm} Hab.`;
-            
-            const baseM = (total * 0.8 * 0.02 / 12) + (total * 0.0001);
-            const tBody = document.getElementById('v-pay-table');
-            tBody.innerHTML = `
-                <tr><td class="freq-label">Mensual</td><td class="payment-val">${fmt(baseM)}</td></tr>
-                <tr><td class="freq-label">Trimestral</td><td class="payment-val">${fmt(baseM * 3)}</td></tr>
-                <tr><td class="freq-label">Semestral</td><td class="payment-val">${fmt(baseM * 6)}</td></tr>
-                <tr><td class="freq-label">Anual</td><td class="payment-val">${fmt(baseM * 12)}</td></tr>
-            `;
-
-            document.getElementById('hero-container').style.display = 'none';
             document.getElementById('v-view').style.display = 'block';
-            confetti({ particleCount: 200, spread: 80, origin: { y: 0.7 }, colors: ['#10b981'] });
+            document.getElementById('hero-contain').style.display = 'none';
+            updateVTable();
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.7 } });
         };
     </script>
 </body>
